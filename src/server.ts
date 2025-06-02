@@ -14,15 +14,22 @@ const PORT = process.env.PORT || 3001;
 // =============================
 //         🔧 Middleware
 // =============================
+const allowedOrigins = [
+  "https://appfoundry.netlify.app",
+  "http://localhost:5173"
+];
+
 app.use(cors({
-  origin: [
-    "http://localhost:3000", // if you still test this locally
-    "https://appfoundry.netlify.app"
-  ],
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error("Not allowed by CORS"));
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: false
 }));
-
 
 // =============================
 //         📦 API Routes
@@ -39,23 +46,34 @@ app.get("/api/test", (_req: Request, res: Response) => {
 // =============================
 //     🖼️  Static Frontend Serve
 // =============================
-const clientPath = path.join(process.cwd(), "../client/dist");
-app.use(express.static(clientPath));
 
-// ✅ Wildcard for SPA Routing
-app.get("*", (req: Request, res: Response) => {
-  if (req.path.startsWith("/api")) {
-    res.status(404).send("API route not found.");
-    return;
-  }
+// ✅ Only serve static frontend if client build exists (for monorepo/local use)
+// Only attach wildcard route in local or monorepo mode
+const isLocalMonorepo = fs.existsSync(path.join(process.cwd(), "../client/dist"));
 
-  const indexPath = path.join(clientPath, "index.html");
-  if (fs.existsSync(indexPath)) {
+if (isLocalMonorepo) {
+  const clientPath = path.join(process.cwd(), "../client/dist");
+  app.use(express.static(clientPath));
+
+  app.get("*", (req: Request, res: Response) => {
+    if (req.path.startsWith("/api")) {
+      res.status(404).send("API route not found.");
+      return;
+    }
+
+    const indexPath = path.join(clientPath, "index.html");
     res.sendFile(indexPath);
-  } else {
-    res.status(404).send("Frontend not found.");
-  }
-});
+  });
+} else {
+  // ✅ No frontend present — allow Render to just serve the backend
+  app.get("*", (req: Request, res: Response) => {
+    if (req.path.startsWith("/api")) {
+      res.status(404).send("API route not found.");
+    } else {
+      res.status(200).send("🧠 Backend API only — frontend not served from this instance.");
+    }
+  });
+}
 
 // =============================
 //       🚀 Start Server
