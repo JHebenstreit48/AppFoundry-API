@@ -21,6 +21,40 @@ The root of every React Native app starts with the <span class="codeSnip">App</s
 
 ---
 
+### Component Tree Structure
+
+All other user interface elements and components must be placed **inside** the <span class="codeSnip">App</span> component or as **descendants** of it.
+
+✅ **Key Concept**:
+- The <span class="codeSnip">App</span> component is the **single root** of the entire React Native application.
+- All child components (views, screens, buttons, inputs) must be nested within it.
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Term</th>
+      <th class="tableCellHeader">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">Root Component</td>
+      <td class="tableCell">The top-most component in the component tree — <span class="codeSnip">App</span> in React Native projects.</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Child Components</td>
+      <td class="tableCell">Components nested inside the root — must be descendants of <span class="codeSnip">App</span>.</td>
+    </tr>
+  </tbody>
+</table>
+
+✅ **Why This Matters**:
+- React Native uses a single root approach — rendering begins at <span class="codeSnip">App</span>.
+- It ensures a predictable and efficient rendering pipeline.
+- It aligns with how React works in web development — everything is nested within one root.
+
+---
+
 ### Why .js and .tsx for the Root Component?
 
 <table class="notesTable">
