@@ -1,8 +1,4 @@
-## JSX & TSX in React Native
-
----
-
-### Introduction to JSX and TSX
+## Introduction to JSX and TSX
 
 React Native uses a syntax extension called <span class="codeSnip">JSX</span> (JavaScript XML) to describe what the UI should look like.
 
@@ -25,8 +21,20 @@ function App() {
 }
 ```
 
-✅ The <span class="codeSnip">&lt;View&gt;</span> acts like a div container.  
-✅ The <span class="codeSnip">&lt;Text&gt;</span> component is used for displaying text.
+The <span class="codeSnip">&lt;View&gt;</span> acts like a div container.  
+The <span class="codeSnip">&lt;Text&gt;</span> component is used for displaying text.
+
+### Key Components in React Native
+
+When writing JSX or TSX in React Native, three core components are used frequently:
+
+- <span class="codeSnip">&lt;View&gt;</span>: Container for layout and structure.
+- <span class="codeSnip">&lt;Text&gt;</span>: Displays readable text.
+- <span class="codeSnip">&lt;TextInput&gt;</span>: Accepts user input like forms and search bars.
+
+Mastering these components is essential for building even the most basic mobile UIs.
+
+➡️ For a deeper look at these and other built-in components, see the <span class="emphasis">Components</span> section.
 
 ---
 
@@ -81,6 +89,77 @@ function Greeting({ message }: Props) {
 
 ---
 
-✅ **Conclusion**
+### How React Native Components Are Compiled
+
+While JSX and TSX let us write declarative code, React Native compiles these elements into native UI components for each platform at runtime.
+
+**Behind the Scenes**:
+- <span class="codeSnip">&lt;View&gt;</span> and <span class="codeSnip">&lt;Text&gt;</span> are not HTML elements.
+- They are translated into **native components** that run directly on Android and iOS devices.
+
+### Web Browser vs. Android Native Components
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Web Browser (react-dom)</th>
+      <th class="tableCellHeader">Native Component (Android)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">&lt;div&gt;</td>
+      <td class="tableCell">android.View</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">&lt;input&gt;</td>
+      <td class="tableCell">EditText</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">...</td>
+      <td class="tableCell">...</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+### iOS Native Components vs. React Native JSX
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Native Component (iOS)</th>
+      <th class="tableCellHeader">React Native JSX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">UIView</td>
+      <td class="tableCell">&lt;View&gt;</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">UITextField</td>
+      <td class="tableCell">&lt;TextInput&gt;</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">...</td>
+      <td class="tableCell">...</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+**Key Takeaways**:
+- <span class="codeSnip">&lt;View&gt;</span> compiles into <span class="codeSnip">android.View</span> on Android and <span class="codeSnip">UIView</span> on iOS.
+- <span class="codeSnip">&lt;TextInput&gt;</span> compiles into <span class="codeSnip">EditText</span> on Android and <span class="codeSnip">UITextField</span> on iOS.
+- React Native abstracts platform differences, enabling you to write **one codebase** for both Android and iOS.
+
+This abstraction simplifies cross-platform development without sacrificing native performance.
+
+---
+
+**Conclusion**
 
 Whether you use <span class="codeSnip">JSX</span> or <span class="codeSnip">TSX</span>, both enhance the developer experience by making UI code more structured, readable, and reliable.
