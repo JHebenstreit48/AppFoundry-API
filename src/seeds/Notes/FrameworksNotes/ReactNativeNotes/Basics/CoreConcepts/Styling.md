@@ -93,8 +93,52 @@ There is no traditional CSS for styling in React Native. CSS does not exist in R
 
 ---
 
+### Writing Styles in JavaScript
+
+In React Native, you write all your styles directly in JavaScript.
+
+✅ **Key Points**:
+- There is no extra styling language like CSS or SCSS.
+- Styles are defined as JavaScript objects and passed to components.
+- React Native provides a large set of styling properties that are **similar** to CSS properties.
+- However, React Native supports only a **subset** of the full CSS feature set — not everything from CSS is available.
+
+---
+
+### Styling Approaches in React Native
+
+Since there is no CSS in React Native, you apply styles in one of two ways:
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Approach</th>
+      <th class="tableCellHeader">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">Inline Styles</td>
+      <td class="tableCell">Define styles directly inside component props using JavaScript objects.</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">StyleSheet Objects</td>
+      <td class="tableCell">Create a centralized style object using <span class="codeSnip">StyleSheet.create()</span> and reference styles by name.</td>
+    </tr>
+  </tbody>
+</table>
+
+✅ **Key Points**:
+- All styles are **written in JavaScript**, next to your component code.
+- The syntax is **similar to CSS**, but React Native supports only a **subset** of CSS properties and features.
+- There is no separate styling file — everything stays in your JavaScript or TypeScript files.
+
+---
+
 ✅ **Summary**
 
-React Native moves away from traditional web styling paradigms.  
-Instead of CSS, it uses **JavaScript-based style objects** and **Flexbox** for responsive, native-optimized layouts.  
-Understanding these differences is essential when transitioning from web development to mobile development with React Native.
+React Native eliminates the need for traditional CSS by shifting all styling into JavaScript.  
+You can style your components using either **Inline Styles** or centralized **StyleSheet Objects**.  
+While the syntax is similar to CSS, React Native implements only a subset of CSS properties, optimized for mobile development.
+
+---
