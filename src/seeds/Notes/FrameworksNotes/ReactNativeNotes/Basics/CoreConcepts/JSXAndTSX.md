@@ -34,7 +34,10 @@ When writing JSX or TSX in React Native, three core components are used frequent
 
 Mastering these components is essential for building even the most basic mobile UIs.
 
-➡️ For a deeper look at these and other built-in components, see the <span class="emphasis">Components</span> section.
+🔹 **Important Note**:
+- Not all components can directly contain text.
+- For example, <span class="codeSnip">&lt;View&gt;</span> cannot hold raw text without wrapping it in a <span class="codeSnip">&lt;Text&gt;</span> component.
+- ➡️ For a deeper dive see the <span class="emphasis">Components</span> section for details on how text and other content must be nested properly.
 
 ---
 
