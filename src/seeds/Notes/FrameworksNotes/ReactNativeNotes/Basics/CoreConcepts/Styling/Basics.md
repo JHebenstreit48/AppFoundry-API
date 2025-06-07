@@ -4,21 +4,31 @@
 
 ### Key Difference: No CSS in React Native
 
-There is no traditional CSS for styling in React Native. CSS does not exist in React Native because it is not
-designed for browser-based websites or web applications.
+There is no traditional CSS for styling in React Native. CSS does not exist in React Native because it is not designed for browser-based websites or web applications.
 
-✅ Instead, styling is handled through JavaScript using the <span class="codeSnip">StyleSheet</span> API
-provided by React Native.
+Instead, styling is handled through JavaScript using the <span class="codeSnip">StyleSheet</span> API provided by React Native.
 
-✅ Styles are written in JavaScript objects and applied directly to components.
+Styles are written in JavaScript objects and applied directly to components.
+
+---
+
+### Writing Styles in JavaScript
+
+In React Native, you write all your styles directly in JavaScript.
+
+**Key Points**:
+
+- There is no extra styling language like CSS or SCSS.
+- Styles are defined as JavaScript objects and passed to components.
+- React Native provides a large set of styling properties that are **similar** to CSS properties.
+- However, React Native supports only a **subset** of the full CSS feature set — not everything from CSS is available.
 
 ---
 
 ### Why No CSS?
 
 - React Native targets **native UI elements**, not HTML elements.
-- Traditional web technologies like CSS are replaced with **style objects** that are optimized for mobile
-  platforms.
+- Traditional web technologies like CSS are replaced with **style objects** that are optimized for mobile platforms.
 
 ---
 
@@ -33,7 +43,7 @@ provided by React Native.
   </thead>
   <tbody>
     <tr class="tableRow">
-      <td class="tableCell">Separate .css or .scss files</td>
+      <td class="tableCell">Separate .css/.scss files <span class="secondEmphasis">or</span> inline <span class="codeSnip">style</span> attributes</td>
       <td class="tableCell">Styles defined inside JavaScript objects</td>
     </tr>
     <tr class="tableRow">
@@ -59,124 +69,11 @@ provided by React Native.
   </tbody>
 </table>
 
----
-
-### Key Layout Differences
-
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Web Layout (CSS)</th>
-      <th class="tableCellHeader">React Native Layout (Flexbox)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">CSS Flexbox for layout</td>
-      <td class="tableCell">React Native uses a subset of Flexbox</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">flexDirection defaults to row</td>
-      <td class="tableCell">flexDirection defaults to column</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">CSS Grid support available</td>
-      <td class="tableCell">No grid — only Flexbox for layout</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Box model with margin, padding, border</td>
-      <td class="tableCell">Box model concept similar but tweaked for native</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Responsive units (%, vw, vh)</td>
-      <td class="tableCell">Flex proportions and Dimensions API</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-### Understanding Padding in React Native
-
-Padding in React Native works just like it does in web development with CSS.
-
-- **Padding** controls the **space inside** a component, between the component’s content and its border (if
-  any).
-- It defines the **internal spacing**, ensuring that the text or child elements do not touch the component’s
-  edges.
-- Padding is applied on all sides or can be controlled individually using
-  <span class="codeSnip">paddingTop</span>, <span class="codeSnip">paddingBottom</span>,
-  <span class="codeSnip">paddingLeft</span>, and <span class="codeSnip">paddingRight</span>.
-
-This behavior is consistent with how padding works in **React for the web** (CSS box model).
-
----
-
-### Writing Styles in JavaScript
-
-In React Native, you write all your styles directly in JavaScript.
-
-✅ **Key Points**:
-
-- There is no extra styling language like CSS or SCSS.
-- Styles are defined as JavaScript objects and passed to components.
-- React Native provides a large set of styling properties that are **similar** to CSS properties.
-- However, React Native supports only a **subset** of the full CSS feature set — not everything from CSS is
-  available.
-
----
-
-### Key Styling Details to Remember
-
-- Style property names that would be hyphenated in CSS are <span class="emphasis">camelCased</span> in React
-  Native.
-  - Examples:
-    - <span class="codeSnip">borderWidth</span>
-    - <span class="codeSnip">backgroundColor</span>
-- Some style properties, like <span class="codeSnip">borderWidth</span> and
-  <span class="codeSnip">borderRadius</span>, only accept <span class="emphasis">numbers</span> —
-  <span class="secondEmphasis">NOT</span> <span class="emphasis">strings</span> or
-  <span class="emphasis">pixel</span> units.
-- Many editors (such as VS Code) provide <span class="emphasis">IntelliSense</span> support to
-  <span class="emphasis">autocomplete</span> valid style <span class="emphasis">property</span> names while
-  typing inside the <span class="codeSnip">style</span> prop.
-
-This structure ensures consistency and makes writing styles more efficient and less error-prone.
-
----
-
-### Order of Properties in React Native Styles
-
-In React Native, the **order of properties inside a style object does not matter**.
-
-- Style objects are standard JavaScript objects.
-- React Native reads all the properties and applies them at once.
-- Unlike CSS, there is no "cascading" — the properties do not override one another based on order within the
-  object.
-
-This makes style definitions more predictable and less prone to unintended overrides.
-
----
-
-### Example: Property Order in React Native
-
-```javascript
-import { StyleSheet } from 'react-native';
-
-const styles1 = StyleSheet.create({ box: { backgroundColor: 'red', padding: 10, borderWidth: 2 } });
-
-const styles2 = StyleSheet.create({ box: { borderWidth: 2, padding: 10, backgroundColor: 'red' } });
-```
-
-Both styles1 and styles2 will produce exactly the same result — property order is irrelevant inside a
-single style object.
-
----
+--- 
 
 ### Important: Combining Multiple Styles
 
-While the order of properties **inside a single object** does not matter, the **order in which you apply
-multiple styles** does matter.
+While the order of properties **inside a single object** does not matter, the **order in which you apply multiple styles** does matter.
 
 When applying an array of styles to a component, later styles in the array can **override** earlier ones:
 
@@ -188,11 +85,9 @@ import { View } from 'react-native';
 
 In this example:
 
-- The styles in <span class="codeSnip">styles.override</span> will **override** any conflicting properties
-  from <span class="codeSnip">styles.base</span>.
+- The styles in <span class="codeSnip">styles.override</span> will **override** any conflicting properties from <span class="codeSnip">styles.base</span>.
 
-The order **within an array** behaves like **last-in wins** — the later style object can overwrite earlier
-ones.
+The order **within an array** behaves like **last-in wins** — the later style object can overwrite earlier ones.
 
 ---
 
@@ -223,7 +118,7 @@ ones.
 
 ---
 
-### Why Use <span class="codeSnip">StyleSheet.create()</span>
+### Why Use StyleSheet.create()
 
 While you can define style objects directly in JavaScript, React Native provides the <span class="codeSnip">StyleSheet.create()</span> API for important reasons:
 
@@ -403,25 +298,20 @@ Since there is no CSS in React Native, you apply styles in one of two ways:
   </tbody>
 </table>
 
-✅ **Key Points**:
+**Key Points**:
 
 - All styles are **written in JavaScript**, next to your component code.
 - The syntax is **similar to CSS**, but React Native supports only a **subset** of CSS properties and
   features.
 - There is no separate styling file — everything stays in your JavaScript or TypeScript files.
 
----
-
-✅ **Summary**
-
+#### Summary
 React Native eliminates the need for traditional CSS by shifting all styling into JavaScript.  
 You can style your components using either **Inline Styles** or centralized **StyleSheet Objects**.  
-While the syntax is similar to CSS, React Native implements only a subset of CSS properties, optimized for
-mobile development. While inline styles are acceptable for small and simple components, StyleSheet objects
-created using <span class="codeSnip">StyleSheet.create()</span> offer better performance and
-maintainability.  
-For larger apps, modularizing styles into separate files is considered a best practice to improve scalability
-and code organization. Inside a style object**: Order of properties does **NOT** affect the rendered style.
-When combining multiple styles**: Later styles in the array **override** earlier styles. React Native
-simplifies style resolution compared to the cascading behavior of CSS, making it easier to predict final
-styles.
+While the syntax is similar to CSS, React Native implements only a subset of CSS properties optimized for mobile development.  
+While inline styles are acceptable for small and simple components, **StyleSheet objects** created using <span class="codeSnip">StyleSheet.create()</span> offer better performance and maintainability.  
+For larger apps, modularizing styles into separate files is considered a best practice to improve scalability and code organization.
+
+Inside a style object: **Order of properties does NOT affect the rendered style**.  
+When combining multiple styles: **Later styles override earlier styles** in the array.  
+React Native simplifies style resolution compared to the cascading behavior of CSS, making it easier to predict final styles.
