@@ -119,6 +119,49 @@ just like React for web and HTML element composition.
 
 ---
 
+### About TextInput in React Native
+
+The <span class="codeSnip">&lt;TextInput&gt;</span> component in React Native allows users to **enter text**.  
+It must be **imported** just like all other core components.
+
+The <span class="codeSnip">&lt;TextInput&gt;</span> component is a **self-closing** component.
+
+Example:
+
+```javascript
+import { TextInput } from 'react-native';
+
+export default function App() {
+  return (
+    <TextInput />
+  );
+}
+```
+
+You can also add a <span class="codeSnip">placeholder</span> prop inside the <span class="codeSnip">&lt;TextInput&gt;</span> component:
+
+Example:
+
+```javascript
+import { TextInput } from 'react-native';
+
+export default function App() {
+  return (
+    <TextInput placeholder="Your placeholder text here" />
+  );
+}
+```
+
+### <span class="emphasis">Text</span> vs <span class="emphasis">TextInput</span>
+
+- <span class="codeSnip">&lt;Text&gt;</span> is used to **display static text**.
+- <span class="codeSnip">&lt;TextInput&gt;</span> is used to **allow the user to input text** in a field.
+
+### Quick Recap
+
+
+
+
 ### About Buttons in React Native
 
 In React Native, buttons are created differently compared to React for web development.  
@@ -326,3 +369,6 @@ similar to <span class="codeSnip">&lt;div&gt;</span>, <span class="codeSnip">&lt
 inside your layout.  
 Nesting of <span class="codeSnip">&lt;View&gt;</span> components is common and enables building complex and
 organized layouts in mobile apps.
+Must import <span class="codeSnip">TextInput</span> from <span class="codeSnip">react-native</span>.
+Self-closing syntax unless extended with additional props.
+Commonly used props: <span class="codeSnip">placeholder</span>, <span class="codeSnip">value</span>, <span class="codeSnip">onChangeText</span>.
