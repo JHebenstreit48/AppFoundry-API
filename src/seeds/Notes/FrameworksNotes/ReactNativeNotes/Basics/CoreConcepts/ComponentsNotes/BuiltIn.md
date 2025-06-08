@@ -1,168 +1,4 @@
-## Introduction to React Native Components
-
-React Native provides a set of built-in components that are the building blocks for mobile app UIs. These
-components abstract away the differences between Android and iOS platforms, allowing you to write one codebase
-that works across both.
-
-**Key Highlights**:
-
-- Pre-built components save development time.
-- Components behave consistently on Android and iOS.
-- Native performance with JavaScript-level ease of use.
-
----
-
-### Core Components and Composition in React Native
-
-React Native is all about working with **Core Components** that are built into the framework.
-
-**Key Concepts**:
-
-- Core Components are translated into **native UI elements** for Android and iOS by React Native.
-- You build your app's UI by **combining Core Components** into **custom components**.
-- This process mirrors how React works in the **web environment** by combining elements.
-- It is also similar to how **HTML** structures web UIs by combining tags.
-
----
-
-### Key Principle: Core Components Have a Defined Purpose
-
-In React Native, every core component is designed with a **clearly defined purpose**.
-
-- Core components are designed to handle specific parts of the UI — such as layout, text display, input handling, or user interaction.
-- This strict design philosophy ensures a **clear separation of concerns** within your app.
-- It encourages you to build apps that are more **organized**, **modular**, and **easy to maintain**.
-- By using components for their intended roles, you can better predict behavior and structure your code effectively.
-
-This principle helps developers create apps that are easier to understand, scale, and debug — especially as the complexity of the UI grows.
-
----
-
-### How it Works
-
-- **Core Components**: Provided by React Native (e.g., View, Text, Button, TextInput, Image).
-- **Custom Components**: Created by combining Core Components and other built-in components to form more
-  complex UI structures.
-
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Core Components</th>
-      <th class="tableCellHeader">Custom Components</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">Built-in by React Native</td>
-      <td class="tableCell">Created by combining Core Components</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Translated into native UI widgets</td>
-      <td class="tableCell">Specific to your app's UI needs</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">View, Text, Button, TextInput, Image</td>
-      <td class="tableCell">UserCard, ProfileHeader, MyTitle</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-### Example: Building a Custom Component
-
-```javascript
-const MyTitle = (props) => {
-  return (
-    <View>
-      <Text>{props.title}</Text>
-    </View>
-  );
-};
-```
-
-In this example:
-
-- <span class="codeSnip">MyTitle</span> is a **custom component**.
-- It **combines Core Components**: <span class="codeSnip">View</span> and <span class="codeSnip">Text</span>.
-- It uses <span class="codeSnip">props</span> to pass dynamic data into the component.
-
-**Summary**: React Native allows you to build flexible, scalable UIs by composing built-in Core Components —
-just like React for web and HTML element composition.
-
----
-
-### Common Components
-
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Component</th>
-      <th class="tableCellHeader">Purpose</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">View</td>
-      <td class="tableCell">Acts as a container for layout and styling, similar to a div in web development.</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Text</td>
-      <td class="tableCell">Displays readable text on the screen.</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">TextInput</td>
-      <td class="tableCell">Allows the user to enter text input, such as for forms or search fields.</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-### About TextInput in React Native
-
-The <span class="codeSnip">&lt;TextInput&gt;</span> component in React Native allows users to **enter text**.  
-It must be **imported** just like all other core components.
-
-The <span class="codeSnip">&lt;TextInput&gt;</span> component is a **self-closing** component.
-
-Example:
-
-```javascript
-import { TextInput } from 'react-native';
-
-export default function App() {
-  return (
-    <TextInput />
-  );
-}
-```
-
-You can also add a <span class="codeSnip">placeholder</span> prop inside the <span class="codeSnip">&lt;TextInput&gt;</span> component:
-
-Example:
-
-```javascript
-import { TextInput } from 'react-native';
-
-export default function App() {
-  return (
-    <TextInput placeholder="Your placeholder text here" />
-  );
-}
-```
-
-### <span class="emphasis">Text</span> vs <span class="emphasis">TextInput</span>
-
-- <span class="codeSnip">&lt;Text&gt;</span> is used to **display static text**.
-- <span class="codeSnip">&lt;TextInput&gt;</span> is used to **allow the user to input text** in a field.
-
-### Quick Recap
-
-
-
-
-### About Buttons in React Native
+### Buttons
 
 In React Native, buttons are created differently compared to React for web development.  
 
@@ -178,15 +14,13 @@ In React (<span class="emphasis">Web</span>), you can place text <span class="em
 <button>Click Me</button>
 ```
 
-- In React Native, the <span class="codeSnip">&lt;Button&gt;</span> component is a **self-closing** element.
-- Instead of placing text between tags, you specify the button text using the
-  <span class="codeSnip">title</span> prop.
+In React Native, the <span class="codeSnip">&lt;Button&gt;</span> component is a **self-closing** element.
+Instead of placing text between tags, you specify the button text using the <span class="codeSnip">title</span> prop.
 
 **Important**:
 
-- The <span class="codeSnip">&lt;Button&gt;</span> component **requires** a
-  <span class="codeSnip">title</span> prop to display the label on the button.
-- However, at this stage, the button will not perform any action because no listener has been added yet.
+The <span class="codeSnip">&lt;Button&gt;</span> component **requires** a <span class="codeSnip">title</span> prop to display the label on the button.
+However, at this stage, the button will not perform any action because no listener has been added yet.
 
 ### Example: Creating a Button in a Basic Layout
 
@@ -221,11 +55,11 @@ In this example:
 
 ---
 
-### Handling Text in React Native Components
+### Handling Text
 
 React Native components have specific rules about what content they can hold — stricter than web development.
 
-✅ **Key Rule**:
+**Key Rule**:
 
 - You cannot insert plain text directly inside a <span class="codeSnip">&lt;View&gt;</span>.
 - Text must be wrapped inside a <span class="codeSnip">&lt;Text&gt;</span> component.
@@ -261,7 +95,7 @@ contain text.
 </View>
 ```
 
-✅ In React Native, text must be inside a <span class="codeSnip">&lt;Text&gt;</span> component.
+In React Native, text must be inside a <span class="codeSnip">&lt;Text&gt;</span> component.
 
 ---
 
@@ -317,7 +151,7 @@ contain text.
 - **Nesting** is fully supported — you can place a <span class="codeSnip">&lt;View&gt;</span> inside another
   <span class="codeSnip">&lt;View&gt;</span> to create hierarchical layouts.
 
-✅ This makes <span class="codeSnip">&lt;View&gt;</span> extremely powerful for building complex and
+This makes <span class="codeSnip">&lt;View&gt;</span> extremely powerful for building complex and
 structured mobile UIs.
 
 ---
@@ -333,7 +167,7 @@ structured mobile UIs.
 </View>
 ```
 
-✅ Here, the inner <span class="codeSnip">&lt;View&gt;</span> is nested inside the outer
+Here, the inner <span class="codeSnip">&lt;View&gt;</span> is nested inside the outer
 <span class="codeSnip">&lt;View&gt;</span>, allowing for parent-child layout relationships.
 
 ---
@@ -356,7 +190,7 @@ React Native documentation:
 
 ---
 
-✅ **Summary**
+**Summary**
 
 Mastering the core components like <span class="codeSnip">&lt;View&gt;</span>,
 <span class="codeSnip">&lt;Text&gt;</span>, and <span class="codeSnip">&lt;TextInput&gt;</span> is essential

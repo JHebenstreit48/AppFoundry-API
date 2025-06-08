@@ -148,7 +148,7 @@ A simple JavaScript process is spun up as part of the native app:
 - Communicates via a bridge to the native platform
 - Allows seamless interaction between JavaScript and native APIs
 
-✅ This bridge enables a hybrid communication model where the JavaScript thread can send and receive commands to native components asynchronously.
+This bridge enables a hybrid communication model where the JavaScript thread can send and receive commands to native components asynchronously.
 
 ---
 
@@ -174,7 +174,7 @@ React Native provides several core components designed for building user interfa
 
 These components are compiled into their native equivalents on iOS and Android.
 
-✅ <span class="codeSnip">&lt;View&gt;</span> and <span class="codeSnip">&lt;Text&gt;</span> are among the most essential and most used components in any React Native project.
+<span class="codeSnip">&lt;View&gt;</span> and <span class="codeSnip">&lt;Text&gt;</span> are among the most essential and most used components in any React Native project.
 
 ---
 
@@ -186,4 +186,4 @@ React Native provides even more advantages beyond being cross-platform and offer
 - <span class="emphasis">Fast Development Cycles</span>: Features like Hot Reloading enable developers to instantly preview code changes without rebuilding the entire app.
 - <span class="emphasis">Strong Ecosystem and Community</span>: A large community and extensive library ecosystem support rapid development with pre-built solutions and plugins.
 
-✅ These benefits make React Native a powerful choice for building efficient, scalable, and high-quality mobile applications.
+These benefits make React Native a powerful choice for building efficient, scalable, and high-quality mobile applications.

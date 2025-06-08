@@ -3,7 +3,7 @@ import notesRouter from '@/routes/api/notesRouter';
 
 const router = express.Router();
 
-// ✅ Mount nested routers
+// Mount nested routers
 router.use('/Notes', notesRouter);
 
 export default router;

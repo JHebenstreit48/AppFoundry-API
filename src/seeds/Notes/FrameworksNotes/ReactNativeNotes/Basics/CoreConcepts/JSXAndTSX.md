@@ -5,7 +5,7 @@ React Native uses a syntax extension called <span class="codeSnip">JSX</span> (J
 - <span class="codeSnip">JSX</span> allows you to write HTML-like syntax inside JavaScript files.
 - In TypeScript-based projects, the equivalent is <span class="codeSnip">TSX</span> (TypeScript XML).
 
-✅ Both <span class="codeSnip">JSX</span> and <span class="codeSnip">TSX</span> make code more readable and expressive by blending HTML structure with JavaScript logic.
+Both <span class="codeSnip">JSX</span> and <span class="codeSnip">TSX</span> make code more readable and expressive by blending HTML structure with JavaScript logic.
 
 ---
 
@@ -48,7 +48,7 @@ Mastering these components is essential for building even the most basic mobile 
 - Self-closing tags must end with a slash (e.g., <span class="codeSnip">&lt;Image /&gt;</span>).
 - JavaScript expressions are inserted inside curly braces <span class="codeSnip">{ }</span>.
 
-✅ JSX is not HTML — it’s syntactic sugar for <span class="codeSnip">React.createElement()</span>.
+JSX is not HTML — it’s syntactic sugar for <span class="codeSnip">React.createElement()</span>.
 
 ---
 
@@ -56,13 +56,13 @@ Mastering these components is essential for building even the most basic mobile 
 
 <span class="codeSnip">TSX</span> is used when you want to add static type checking to your React Native code with TypeScript.
 
-✅ Benefits of using <span class="codeSnip">TSX</span>:
+Benefits of using <span class="codeSnip">TSX</span>:
 
 - Catch errors at compile time.
 - Better editor autocomplete and IntelliSense.
 - Explicit prop and state type definitions.
 
-✅ Example of a component in TSX:
+Example of a component in TSX:
 
 ```typescript
 type Props = {
@@ -78,7 +78,7 @@ function Greeting({ message }: Props) {
 }
 ```
 
-✅ The <span class="codeSnip">Props</span> type ensures that <span class="codeSnip">message</span> must be a string.
+The <span class="codeSnip">Props</span> type ensures that <span class="codeSnip">message</span> must be a string.
 
 ---
 
@@ -88,7 +88,7 @@ function Greeting({ message }: Props) {
 - **Component-Based Structure**: Makes building and maintaining UIs scalable.
 - **Type Safety (TSX)**: Reduces runtime errors and improves code quality.
 
-✅ Most modern React Native projects benefit from starting with <span class="codeSnip">TSX</span> for stronger type checking.
+Most modern React Native projects benefit from starting with <span class="codeSnip">TSX</span> for stronger type checking.
 
 ---
 

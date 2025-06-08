@@ -47,7 +47,7 @@ app.get("/api/test", (_req: Request, res: Response) => {
 //     🖼️  Static Frontend Serve
 // =============================
 
-// ✅ Only serve static frontend if client build exists (for monorepo/local use)
+// Only serve static frontend if client build exists (for monorepo/local use)
 // Only attach wildcard route in local or monorepo mode
 const isLocalMonorepo = fs.existsSync(path.join(process.cwd(), "../client/dist"));
 
@@ -65,7 +65,7 @@ if (isLocalMonorepo) {
     res.sendFile(indexPath);
   });
 } else {
-  // ✅ No frontend present — allow Render to just serve the backend
+  // No frontend present — allow Render to just serve the backend
   app.get("*", (req: Request, res: Response) => {
     if (req.path.startsWith("/api")) {
       res.status(404).send("API route not found.");

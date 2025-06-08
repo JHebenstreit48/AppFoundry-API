@@ -4,7 +4,7 @@
 
 ### Key Styling Details to Remember
 
-- Style property names that would be hyphenated in CSS are <span class="emphasis">camelCased</span> in React Native.
+Style property names that would be hyphenated in CSS are <span class="emphasis">camelCased</span> in React Native.
   - Examples:
     - <span class="codeSnip">borderWidth</span>
     - <span class="codeSnip">backgroundColor</span>
