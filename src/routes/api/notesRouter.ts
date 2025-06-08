@@ -22,7 +22,7 @@ const fetchNote = async (req: express.Request, res: express.Response) => {
   }
 };
 
-// ✅ No overload issue
+// No overload issue
 router.get('/:wildPath(*)', (req, res) => {
     console.log(`🛑 HIT /api/Notes/${req.params.wildPath}`); // <-- PROOF!
   void fetchNote(req, res); // ensures return type is void

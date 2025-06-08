@@ -25,7 +25,7 @@ The root of every React Native app starts with the <span class="codeSnip">App</s
 
 All other user interface elements and components must be placed **inside** the <span class="codeSnip">App</span> component or as **descendants** of it.
 
-✅ **Key Concept**:
+**Key Concept**:
 - The <span class="codeSnip">App</span> component is the **single root** of the entire React Native application.
 - All child components (views, screens, buttons, inputs) must be nested within it.
 
@@ -48,7 +48,7 @@ All other user interface elements and components must be placed **inside** the <
   </tbody>
 </table>
 
-✅ **Why This Matters**:
+**Why This Matters**:
 - React Native uses a single root approach — rendering begins at <span class="codeSnip">App</span>.
 - It ensures a predictable and efficient rendering pipeline.
 - It aligns with how React works in web development — everything is nested within one root.
@@ -135,5 +135,3 @@ In a React Native project:
 - **JavaScript** uses <span class="codeSnip">.js</span> files, but **TypeScript with JSX** requires <span class="codeSnip">.tsx</span>.
 - **Metro Bundler** handles bundling and Babel transforms both JavaScript and TypeScript sources.
 - The project structure is designed to keep app and native code logically separated and easy to manage.
-
----

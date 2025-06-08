@@ -25,11 +25,11 @@ JavaScript code does not run natively on Android or iOS. Instead, React Native p
 
 When a React Native app needs to access device hardware, it sends a command across the bridge. The native code executes the command and sends the result back to JavaScript asynchronously.
 
-✅ **Advantages:**
+**Advantages:**
 - Keeps the JavaScript codebase clean and cross-platform.
 - Allows access to powerful device features when needed.
 
-⚠️ **Considerations:**
+**Considerations:**
 - Communication across the bridge can have performance overhead if done excessively.
 - Asynchronous behavior requires handling promises or callbacks carefully.
 
@@ -91,7 +91,7 @@ export default function CameraExample() {
 
 ---
 
-✅ **Conclusion**
+**Conclusion**
 
 React Native’s bridge architecture enables JavaScript code to access powerful native APIs without sacrificing cross-platform compatibility.  
 For device features like camera and GPS, using well-established libraries can simplify development while maintaining app performance.
