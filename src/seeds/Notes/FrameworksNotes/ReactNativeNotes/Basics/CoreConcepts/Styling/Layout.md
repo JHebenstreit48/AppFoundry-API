@@ -2,6 +2,63 @@
 
 ---
 
+### Flexbox Layouts in React Native
+
+In React Native, layouts are typically created using **Flexbox** — similar to how Flexbox works in web development.
+
+- Elements are positioned inside containers, just like CSS Flexbox.
+- Positioning and layout are controlled via style properties applied to the container.
+- Flexbox layouts are based on two axes — the Main Axis (layout direction) and the Cross Axis (perpendicular direction) — both controlled by the container’s flexDirection and alignment properties.
+
+### Flexbox in React Native: Enabled by Default
+
+In React Native, **Flexbox is enabled by default** on all <span class="codeSnip">&lt;View&gt;</span> components.
+
+- There is **no need** to set <span class="codeSnip">display: 'flex'</span> manually, unlike in web development with CSS.
+- Every <span class="codeSnip">&lt;View&gt;</span> already applies Flexbox layout rules to its children by default, without needing to manually set <span class="codeSnip">display: 'flex'</span>.
+- You can immediately control layout using properties like <span class="codeSnip">flexDirection</span>, <span class="codeSnip">justifyContent</span>, and <span class="codeSnip">alignItems</span>.
+
+In comparison:
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Web (CSS)</th>
+      <th class="tableCellHeader">React Native (Mobile)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">Must set <span class="codeSnip">display: flex</span> manually</td>
+      <td class="tableCell">Flexbox is the default on <span class="codeSnip">&lt;View&gt;</span></td>
+    </tr>
+  </tbody>
+</table>
+
+#### Example:
+
+```javascript
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
+  }
+});
+```
+
+In this example:
+
+- <span class="codeSnip">flex: 1</span> tells the container to **expand and occupy all available space** relative to its siblings.
+- <span class="codeSnip">flexDirection</span> controls the **orientation** of the layout:
+  - **Main Axis**: The primary direction along which items are laid out (defaults to vertical / column in React Native).
+  - **Cross Axis**: The axis perpendicular to the Main Axis (defaults to horizontal / row).
+
+---
+
 ### Key Layout Differences
 
 <table class="notesTable">
@@ -34,65 +91,6 @@
     </tr>
   </tbody>
 </table>
-
----
-
-### Flexbox in React Native: Enabled by Default
-
-In React Native, **Flexbox is enabled by default** on all <span class="codeSnip">&lt;View&gt;</span> components.
-
-- There is **no need** to set <span class="codeSnip">display: 'flex'</span> manually, unlike in web development with CSS.
-- Every <span class="codeSnip">&lt;View&gt;</span> already behaves like a Flex container.
-- You can immediately control layout using properties like <span class="codeSnip">flexDirection</span>, <span class="codeSnip">justifyContent</span>, and <span class="codeSnip">alignItems</span>.
-
-In comparison:
-
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Web (CSS)</th>
-      <th class="tableCellHeader">React Native (Mobile)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">Must set <span class="codeSnip">display: flex</span> manually</td>
-      <td class="tableCell">Flexbox is the default on <span class="codeSnip">&lt;View&gt;</span></td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-### Flexbox Layouts in React Native
-
-In React Native, layouts are typically created using **Flexbox** — similar to how Flexbox works in web development.
-
-- Elements are positioned inside containers, just like CSS Flexbox.
-- Positioning and layout are controlled via style properties applied to the container.
-- Flexbox is all about controlling the **axes** inside the container.
-
-Example:
-
-```javascript
-import { StyleSheet } from 'react-native';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start'
-  }
-});
-```
-
-In this example:
-
-- <span class="codeSnip">flex: 1</span> tells the container to **expand and occupy all available space** relative to its siblings.
-- <span class="codeSnip">flexDirection</span> controls the **orientation** of the layout:
-  - **Main Axis**: The primary direction along which items are laid out (defaults to vertical / column in React Native).
-  - **Cross Axis**: The axis perpendicular to the Main Axis (defaults to horizontal / row).
 
 ---
 
