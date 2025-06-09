@@ -106,6 +106,45 @@ This example shows:
 
 ---
 
+### Shrink-to-Fit Behavior Without Fixed Dimensions
+
+In a Flexbox layout, if a parent container has no <span class="codeSnip">width</span>, <span class="codeSnip">height</span>, or <span class="codeSnip">flex</span> value, it will shrink to fit its children.
+
+For example, if a parent <View> contains child boxes but no width or height is defined, it will only be as wide or tall as its children need it to be — based on their content and padding.
+
+In this state, the layout may appear very small unless a fixed or relative size is applied to the parent container.
+
+To prevent this shrink-to-fit behavior, you can:
+- Add a fixed <span class="codeSnip">width</span> (e.g., <span class="codeSnip">width: 300</span>)
+- Use a percentage width (e.g., <span class="codeSnip">width: '80%'</span>)
+- Or apply <span class="codeSnip">flex: 1</span> to fill available space
+
+---
+
+#### Example: Using a Fixed Width
+
+```javascript
+import { View, Text } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={{ padding: 50, flexDirection: 'row', width: 300 }}>
+      <View style={{ backgroundColor: 'red' }}>
+        <Text>1</Text>
+      </View>
+      <View style={{ backgroundColor: 'blue' }}>
+        <Text>2</Text>
+      </View>
+      <View style={{ backgroundColor: 'green' }}>
+        <Text>3</Text>
+      </View>
+    </View>
+  );
+}
+```
+
+---
+
 ### Minimum and Maximum Dimensions
 
 You can also restrict the minimum or maximum size of an element using:
@@ -170,6 +209,71 @@ This is useful when you need to perform calculations or set styles based on the 
 **Key Point**:  
 Dimensions.get('window') returns the size of the entire application window, not just the visible area if the device has status bars or navigation bars.
 
+---
+
+### Flex Ratios and Width Behavior Along the Main Axis
+
+In Flexbox, children can grow or shrink based on their <span class="codeSnip">flex</span> values — which apply along the Main Axis.
+
+For example, in a parent <View> using <span class="codeSnip">flexDirection: 'row'</span> with three children:
+
+- The first child has <span class="codeSnip">flex: 1</span>
+- The second child has <span class="codeSnip">flex: 2</span>
+- The third child has no flex
+
+The available horizontal space (after padding) is divided proportionally:
+- The first child takes 1 part
+- The second child takes 2 parts
+- The third child only takes as much width as its content and padding require
+
+This shows how <span class="codeSnip">flex</span> allows child components to grow or shrink relative to each other along the Main Axis, while also stretching (if not otherwise constrained) along the Cross Axis.
+
+#### Example: Flex Ratios and Cross Axis Stretching Combined
+
+```javascript
+import { View, Text } from 'react-native';
+
+export default function App() {
+  return (
+    <View
+      style={{
+        padding: 50,
+        flexDirection: 'row',
+        width: '80%',
+        height: 300,
+        justifyContent: 'space-around',
+        alignItems: 'stretch',
+      }}>
+      <View
+        style={{
+          backgroundColor: 'red',
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text>1</Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: 'blue',
+          flex: 2,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text>2</Text>
+      </View>
+      <View
+        style={{
+          backgroundColor: 'green',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text>3</Text>
+      </View>
+    </View>
+  );
+}
+```
 ---
 
 #### Summary
