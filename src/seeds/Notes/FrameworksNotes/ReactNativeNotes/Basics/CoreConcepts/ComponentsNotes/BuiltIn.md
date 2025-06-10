@@ -1,4 +1,6 @@
-### Buttons
+## &lt;Button&gt;
+
+----
 
 In React Native, buttons are created differently compared to React for web development.  
 
@@ -52,6 +54,16 @@ In this example:
 - A <span class="codeSnip">&lt;View&gt;</span> wraps multiple <span class="codeSnip">&lt;Text&gt;</span> elements and a <span class="codeSnip">&lt;Button&gt;</span>.
 - The <span class="codeSnip">&lt;Button&gt;</span> uses the <span class="codeSnip">title</span> prop to display "Tap me!" as its label.
 - No listener has been added yet, so the button will not perform any action when tapped.
+
+---
+
+### Styling Limitations with <span class="codeSnip">&lt;Button&gt;</span>
+
+The <span class="codeSnip">&lt;Button&gt;</span> component does not support the <span class="codeSnip">style</span> prop. This means you cannot directly apply styles such as background color or padding using the <span class="codeSnip">style</span> property.
+
+Because of this limitation, autocomplete will not work in VS Code for <span class="codeSnip">style</span> when using a <span class="codeSnip">&lt;Button&gt;</span>. If <span class="codeSnip">style</span> were supported, VS Code would show a [icon:wrench] icon to the left of the <span class="codeSnip">style</span> prop, indicating that it is a recognized, valid property.
+
+To create custom-styled buttons, consider using <span class="codeSnip">&lt;Pressable&gt;</span> or <span class="codeSnip">&lt;TouchableOpacity&gt;</span>, which allow full control over styling.
 
 ---
 
@@ -186,7 +198,9 @@ Here, the inner <span class="codeSnip">&lt;View&gt;</span> is nested inside the 
 The complete list of React Native components, along with detailed documentation, can be found in the official
 React Native documentation:
 
-<span class="emphasis">https://reactnative.dev/docs/components-and-apis</span>
+<a href="/resources/frameworks/reactnative/basics#components" class="resourceLinks">
+Jump to Components Section
+</a>
 
 ---
 
