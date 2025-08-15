@@ -1,9 +1,10 @@
-markdown
-# State
+<br>
 
 ---
 
 ## What Is State?
+
+---
 
 In React Native, state refers to data managed within a component that can change over time in response to user actions, network responses, or other factors. It is a core concept in building dynamic interfaces.
 
@@ -19,7 +20,7 @@ This makes it easy for developers with React experience to transition into React
 
 ## Example: Basic useState
 
-```javascript
+```js
 import { useState } from 'react';
 import { View, Text, Button } from 'react-native';
 
@@ -45,8 +46,9 @@ Use the **functional update pattern** when the next state depends on the previou
 
 **Example: Functional Update Pattern**
 
-javascript
+```js
 setCount((prevCount) => prevCount + 1);
+```
 
 ---
 ### **Multiple State Variables**
@@ -55,7 +57,7 @@ React allows managing multiple state values in a single component.
 
 **Example: Managing Multiple State Variables**
 
-```javascript
+```js
 import React, { useState } from "react";
 import { View, Text, Button } from "react-native";
 
