@@ -1,4 +1,10 @@
-## Introduction to Project Setup
+<br>
+
+---
+
+## Project Setup Methods
+
+---
 
 There are two main ways to start a React Native project:
 
