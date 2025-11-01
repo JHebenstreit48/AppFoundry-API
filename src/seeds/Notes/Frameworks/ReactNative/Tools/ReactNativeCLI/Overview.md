@@ -8,7 +8,7 @@
 
 It provides a more "bare-metal" approach to React Native app development compared to Expo CLI.
 
-✅ Key Highlights:
+Key Highlights:
 - Full control over the native Android and iOS projects.
 - Ability to integrate custom native modules.
 - Preferred for large-scale production apps requiring customizations at the native level.
@@ -19,7 +19,7 @@ It provides a more "bare-metal" approach to React Native app development compare
 
 While <span class="emphasis">Expo CLI</span> offers ease of use, it hides the native code. <span class="emphasis">React Native CLI</span> gives you complete freedom to work with native codebases when necessary.
 
-✅ Advantages:
+Advantages:
 
 - No restrictions — full access to Android and iOS native code.
 - Easier to link custom native libraries written in Java, Kotlin, Swift, or Objective-C.
@@ -28,29 +28,8 @@ While <span class="emphasis">Expo CLI</span> offers ease of use, it hides the na
 
 ---
 
-### Installing React Native CLI
-
-First, install the CLI globally using npm:
-
-```shell
-npm install -g react-native-cli
-```
-
-✅ Alternatively, many projects use the `npx` tool to avoid global installation.
-
----
-
-### Creating a New Project
-
-Create a new project by running:
-
-```shell
-npx react-native init MyNewApp
-```
-
-✅ This generates a fully structured project, including the Android and iOS native directories.
-
----
+For setup instructions, see  
+<a href="/react-native/tools/rn-cli/setup">React Native CLI — Setup</a>  
 
 ### Project Structure
 
@@ -62,29 +41,8 @@ The folder structure you get includes:
 - <span class="codeSnip">/node_modules</span> — project dependencies
 - <span class="codeSnip">package.json</span> — project metadata and scripts
 
----
-
-### Running the App
-
-Navigate into your project:
-
-```shell
-cd MyNewApp
-```
-
-Then run the app on Android:
-
-```shell
-npx react-native run-android
-```
-
-Or on iOS:
-
-```shell
-npx react-native run-ios
-```
-g
-✅ You must have Android Studio (for Android) and Xcode (for iOS) installed and properly configured.
+For detailed workflow and commands, see  
+<a href="/react-native/tools/rn-cli/running">Running Apps with React Native CLI</a>  
 
 ---
 
@@ -98,6 +56,18 @@ For iOS:
 - macOS
 - Xcode with Command Line Tools
 
+These native build tools are required for compiling and running React Native apps outside of Expo.
+
+---
+
+### Relationship to Other Tools
+
+- **Metro Bundler:** The JavaScript bundler automatically launched when running React Native CLI.  
+- **Android Studio:** Used to manage SDKs, emulators, and Android builds.  
+- **Xcode:** Required for iOS builds on macOS.  
+
+Each of these tools has its own dedicated section in the Tools category for configuration and troubleshooting.
+
 ---
 
 ✅ **Conclusion**
@@ -105,3 +75,8 @@ For iOS:
 <span class="emphasis">React Native CLI</span> is the preferred tool for advanced app development, giving you complete control of the native layers.
 
 While it has a steeper learning curve than <span class="emphasis">Expo CLI</span>, it is ideal for production apps that require maximum flexibility and performance.
+
+<div class="xrefBox">
+  <span class="emphasis">Next:</span>
+  <a href="/react-native/tools/rncli/setup">Setup and Bare Workflow</a>
+</div>
