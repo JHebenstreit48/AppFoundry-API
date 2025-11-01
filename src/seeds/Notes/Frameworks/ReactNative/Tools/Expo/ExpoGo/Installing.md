@@ -4,9 +4,11 @@
 
 ### Introduction
 
-Expo Go provides a simple way to preview and test React Native apps on a real device without the need for setting up emulators or simulators.
+Expo Go provides a simple way to preview and test React Native apps on a real device without the need for
+setting up emulators or simulators.
 
-✅ **Key Highlights:**
+**Key Highlights:**
+
 - Easy installation on Android and iOS devices.
 - Instant access to your development build by scanning a QR code.
 - No native builds or configuration required for initial testing.
@@ -19,15 +21,15 @@ Expo Go provides a simple way to preview and test React Native apps on a real de
 Before running your app with <span class="emphasis">Expo Go</span>, ensure the following:
 
 - <span class="emphasis">Node.js</span> is installed on your system.
-- <span class="emphasis">Expo CLI</span> is installed globally:
+- <span class="emphasis">Expo CLI</span> is available via **npx** (no need for global installation):
 
 ```shell
-npm install -g expo-cli
+    npx create-expo-app MyNewApp
 ```
 
 - Your development machine and mobile device are connected to the same Wi-Fi network.
 
-✅ These steps ensure smooth communication between your development server and your device.
+These steps ensure smooth communication between your development server and your device.
 
 ---
 
@@ -38,7 +40,7 @@ To begin, install the <span class="emphasis">Expo Go</span> app on your device:
 - 📱 **iOS**: Available for download from the App Store.
 - 📱 **Android**: Available for download from Google Play.
 
-✅ The app is lightweight and free to use, making it a perfect tool for mobile development on real devices.
+The app is lightweight and free to use, making it a perfect tool for mobile development on real devices.
 
 ---
 
@@ -48,14 +50,14 @@ To begin, install the <span class="emphasis">Expo Go</span> app on your device:
 2. Start the Expo development server:
 
 ```shell
-npm start
+    npx expo start
 ```
 
 3. The Metro Bundler will launch and display a QR code in the terminal and in Expo DevTools.
 4. Open the <span class="emphasis">Expo Go</span> app on your device.
 5. Use the app’s QR code scanner to scan the code displayed by the Metro Bundler.
 
-✅ Your app will open instantly on your physical device, allowing real-time development and testing.
+Your app will open instantly on your physical device, allowing real-time development and testing.
 
 ---
 
@@ -67,8 +69,23 @@ npm start
 
 ---
 
-✅ **Conclusion**
+### Legacy Commands (Deprecated but Functional)
 
-Installing and running your app with <span class="emphasis">Expo Go</span> is the fastest and easiest way to begin developing with React Native. With minimal setup, you can see your project live on a real device within minutes.
+```shell
+    npm install -g expo-cli
+    expo init MyNewApp
+    npm start
+```
 
-➡️ **Next Steps**: Once you are comfortable with basic installation and running, explore live reload and fast refresh features to improve your development workflow.
+⚠️ While these commands still work, new projects should use <span class="codeSnip">npx create-expo-app</span> for best compatibility and future support.
+
+---
+
+**Conclusion**
+
+Installing and running your app with <span class="emphasis">Expo Go</span> is the fastest and easiest way to
+begin developing with React Native. With minimal setup, you can see your project live on a real device within
+minutes.
+
+**Next Steps**: Once you are comfortable with basic installation and running, explore live reload and fast
+refresh features to improve your development workflow.

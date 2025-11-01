@@ -1,117 +1,80 @@
 <br>
 
----
-
 ## Project Setup Methods
 
 ---
 
 There are two main ways to start a React Native project:
 
-- <span class="emphasis">Expo CLI</span> — a <span class="secondEmphasis">managed workflow</span> for <span class="secondEmphasis">rapid</span> development.
-- <span class="emphasis">React Native CLI</span> — a bare-bones approach for more control.
+- <span class="emphasis">Expo</span> — a <span class="secondEmphasis">managed workflow</span> for
+  <span class="secondEmphasis">rapid</span> development.
+- <span class="emphasis">React Native CLI</span> — a bare-bones approach offering full native control.
 
-Each setup method offers different benefits depending on the project needs and complexity.
+Each setup method fits different project needs and complexity levels.
 
 ---
 
-### Expo CLI Quickstart
+### Expo Quickstart
 
-<span class="emphasis">Expo CLI</span> is a free third-party service that simplifies React Native development by providing a managed environment.
+<span class="emphasis">Expo</span> is a free, open-source toolchain that simplifies React Native development
+by providing a managed environment.
 
-Key Benefits:
+**Key Benefits:**
 
 - No need to install Android Studio or Xcode for basic development.
-- Comes with built-in tools for testing and debugging.
-- Easier to get started — ideal for prototyping and small to medium apps.
+- Built-in tools for testing, debugging, and live reloading.
+- Ideal for prototyping, small-to-medium apps, and rapid iteration.
 
-Typical Workflow:
+This launches the Metro Bundler and opens Expo DevTools with a QR code you can scan using
+<span class="emphasis">Expo Go</span> to run the app on a physical device or emulator.
 
-- Install Expo CLI globally:  
-
-```shell
-npm install -g expo-cli
-```
-
-- Create a new project:
-
-```shell
-expo init MyNewApp
-```
-
-- Start the development server:
-
-```shell
-cd MyNewApp
-npm start
-```
-
-This will launch the Metro Bundler and you can use **Expo Go** to run the app on a physical device or emulator.
+For full setup instructions, see  
+<a href="/react-native/tools/expo/cli/workflow">Expo — CLI Workflow</a>
 
 ---
 
 ### React Native CLI Quickstart
 
-<span class="emphasis">React Native CLI</span> is the official toolchain recommended for apps that require custom native code.
+<span class="emphasis">React Native CLI</span> is the official toolchain for apps requiring access to custom
+native code.
 
-Key Benefits:
+**Key Benefits:**
 
-- Full control over the native code (iOS and Android).
-- Easier integration with native modules written in Java, Kotlin, Objective-C, or Swift.
-- Ideal for larger, production-grade apps needing advanced functionality.
+- Full control over Android and iOS native layers.
+- Easier integration with Java, Kotlin, Objective-C, or Swift modules.
+- Ideal for production-grade apps needing platform-specific optimization.
 
-Typical Workflow:
-
-- Install React Native CLI globally:
-
-```shell
-npm install -g react-native-cli
-```
-
-- Create a new project:  
-
-```shell
-npx react-native init MyNewApp
-```
-
-- Navigate into the project folder:
-
-```shell
-cd MyNewApp
-```
-
-- Run the app:
-
-```shell
-npx react-native run-android
-npx react-native run-ios
-```
-
-This process requires Android Studio (for Android) and Xcode (for iOS) to be installed and configured.
+Requires Android Studio (for Android) and Xcode (for iOS) installed and configured.  
+For complete setup details, see  
+<a href="/tools/react-native-cli/setup">React Native CLI — Setup</a>
 
 ---
 
-### Default Language and File Setup
+### Language and Entry Files
 
 When you create a new React Native project:
 
-**Defaults**:
-- React Native defaults to **TypeScript** for new projects created with the CLI or Expo CLI.
-- JavaScript is still supported if you prefer.
+**Defaults:**
 
-**Root File**:
-- JavaScript projects: <span class="codeSnip">App.js</span>.
-- TypeScript projects: <span class="codeSnip">App.tsx</span>.
+- Supports both <span class="emphasis">JavaScript</span> and <span class="emphasis">TypeScript</span> (choose
+  a TS template or add a <span class="codeSnip">tsconfig.json</span>).
+- TypeScript files that contain JSX must use the <span class="codeSnip">.tsx</span> extension.
 
-**Note**:
-- The entry file <span class="codeSnip">index.js</span> typically remains unchanged even in TypeScript projects.
-- TypeScript projects require the <span class="codeSnip">.tsx</span> extension for files containing JSX.
+**Root File:**
 
-*For a deeper explanation of file structure and project architecture, see the [Project Structure](#) section.*
+- JavaScript: <span class="codeSnip">App.js</span>
+- TypeScript: <span class="codeSnip">App.tsx</span>
+
+**Notes:**
+
+- <span class="codeSnip">index.js</span> usually remains unchanged.
+- The <span class="codeSnip">&lt;App /&gt;</span> component is your primary entry point.
+
+For structure and architecture, see the <span class="emphasis">Project Structure</span> page.
 
 ---
 
-### Choosing Between Expo CLI and React Native CLI
+### Choosing Between Expo and React Native CLI
 
 <table class="notesTable">
   <thead>
@@ -122,53 +85,60 @@ When you create a new React Native project:
   </thead>
   <tbody>
     <tr class="tableRow">
-      <td class="tableCell"><span class="emphasis">Expo CLI</span></td>
-      <td class="tableCell">Rapid prototyping, beginners, apps without custom native code</td>
+      <td class="tableCell"><span class="emphasis">Expo</span></td>
+      <td class="tableCell">Rapid prototyping, beginners, or projects without custom native code</td>
     </tr>
     <tr class="tableRow">
       <td class="tableCell"><span class="emphasis">React Native CLI</span></td>
-      <td class="tableCell">Full control, custom native modules, complex production apps</td>
+      <td class="tableCell">Complex apps, native integration, or production-level performance tuning</td>
     </tr>
   </tbody>
 </table>
 
 ---
 
-### Expo CLI Pros and Cons
+### Pros and Cons Overview
 
-**Pros:**
+#### Expo
 
-- Quick setup and development.
-- No native build tools required initially.
-- Easy testing with Expo Go app.
+**Pros**
 
-**Cons:**
+- Fast and frictionless setup
+- No native build tools required initially
+- Live reload and testing via Expo Go
 
-- Limited access to native modules unless you eject.
-- Larger app sizes.
-- Some advanced features might require ejecting to bare workflow.
+**Cons**
+
+- Limited access to native modules unless ejected
+- Slightly larger app binaries
+- Some advanced features require the bare workflow
+
+#### React Native CLI
+
+**Pros**
+
+- Full access to native APIs and libraries
+- Ideal for complex and performance-intensive apps
+- No limitations on third-party native modules
+
+**Cons**
+
+- Requires Android Studio and Xcode
+- Higher setup complexity
+- Steeper learning curve
 
 ---
 
-### React Native CLI Pros and Cons
+### Summary
 
-**Pros:**
+For beginners or fast iteration, start with <span class="emphasis">Expo</span>.  
+For advanced features and full native control, use <span class="emphasis">React Native CLI</span>.
 
-- Full access to native APIs and libraries.
-- Better suited for larger, complex apps.
-- No limitations on custom native modules.
-
-**Cons:**
-
-- Requires Android Studio and Xcode.
-- More complicated setup.
-- Higher learning curve for beginners.
+Choosing the right setup depends on your project’s scope, timeline, and technical needs.
 
 ---
 
-**Conclusion**
-
-For simple apps or quick development cycles, <span class="emphasis">Expo CLI</span> is a great starting point.  
-For full native access and advanced features, <span class="emphasis">React Native CLI</span> is the better choice.
-
-Choosing the right setup depends on your project's needs, timeline, and complexity.
+<div class="xrefBox">
+  <span class="emphasis">Next:</span>
+<a href="/react-native/basics/fundamentals/structure">Project Structure</a>.
+</div>
