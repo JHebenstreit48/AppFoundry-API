@@ -4,9 +4,11 @@
 
 ### Introduction
 
-When developing React Native apps with Expo, using QR codes is a fast and convenient way to load your project onto a real device. It allows you to test your app without setting up emulators or simulators.
+When developing React Native apps with Expo, using QR codes is a fast and convenient way to load your project
+onto a real device. It allows you to test your app without setting up emulators or simulators.
 
-✅ **Key Highlights:**
+**Key Highlights:**
+
 - Instant loading of your app on physical Android and iOS devices.
 - Efficient for rapid testing and iteration.
 - Ideal when developing on Windows or without access to a Mac.
@@ -15,12 +17,15 @@ When developing React Native apps with Expo, using QR codes is a fast and conven
 
 ### Why Use QR Codes for Testing?
 
-✅ **Benefits of Using QR Codes and Expo Go**:
-- **No Emulator/Simulator Needed**: Quickly test apps on real hardware.
-- **Real Hardware Testing**: Experience your app the way users will, including performance and native behaviors.
-- **Cross-Platform**: Works on both Android and iOS devices with minimal setup.
+**Benefits of Using QR Codes and Expo Go:**
 
-Using a real device can expose platform-specific issues earlier in the development process, leading to better overall app quality.
+- **No Emulator/Simulator Needed:** Quickly test apps on real hardware.
+- **Real Hardware Testing:** Experience your app the way users will, including performance and native
+  behaviors.
+- **Cross-Platform:** Works on both Android and iOS devices with minimal setup.
+
+Using a real device can expose platform-specific issues earlier in the development process, leading to better
+overall app quality.
 
 ---
 
@@ -64,9 +69,11 @@ Even though QR code testing is easy, some issues might occur. Here are common pr
 - Refresh the Metro Bundler to generate a new QR code:
 
 ```shell
-r
+    r
 ```
-Pressing <span class="emphasis">r</span> in the Metro Bundler terminal will refresh the QR code and restart the development server.
+
+Pressing <span class="emphasis">r</span> in the Metro Bundler terminal will refresh the QR code and restart
+the development server.
 
 ---
 
@@ -76,7 +83,7 @@ Pressing <span class="emphasis">r</span> in the Metro Bundler terminal will refr
 - Restart the Metro Bundler server:
 
 ```shell
-npm start --clear
+    npx expo start --clear
 ```
 
 This will clear the cache and restart the bundler, solving many hidden issues.
@@ -88,11 +95,25 @@ This will clear the cache and restart the bundler, solving many hidden issues.
 #### Device Connection Issues
 
 If the device still fails to connect:
+
 - Verify that the IP address in the Metro Bundler URL matches your computer’s local network IP.
 - Check if you need to configure your firewall to allow local network traffic for development.
 
 ---
 
-✅ **Conclusion**
+### Legacy Commands (Deprecated but Functional)
 
-Using QR codes with <span class="emphasis">Expo Go</span> provides a fast, efficient, and reliable method to test React Native apps on real devices. With minimal setup, you can avoid the overhead of emulators and simulators while developing on any operating system.
+```shell
+    npm start --clear
+```
+
+Older projects created with <span class="codeSnip">expo-cli</span> can still use these, but new projects
+should rely on the <span class="codeSnip">npx expo</span> workflow.
+
+---
+
+**Conclusion**
+
+Using QR codes with <span class="emphasis">Expo Go</span> provides a fast, efficient, and reliable method to
+test React Native apps on real devices. With minimal setup, you can avoid the overhead of emulators and
+simulators while developing on any operating system.
