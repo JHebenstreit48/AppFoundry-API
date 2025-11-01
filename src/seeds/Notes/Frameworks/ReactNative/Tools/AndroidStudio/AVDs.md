@@ -2,9 +2,9 @@
 
 ---
 
-### Introduction to Android Emulators
+### Introduction to Android Emulators (for React Native)
 
-Android Studio provides a built-in tool to create virtual devices — known as Android Virtual Devices (AVDs) — which are useful for testing apps without needing a physical device.
+Android Studio’s AVD Manager allows you to create virtual Android devices for testing React Native apps without a physical device.
 
 - Virtual devices allow developers to emulate different screen sizes, Android versions, and hardware profiles.
 
@@ -44,7 +44,7 @@ From here, you can create, manage, and run virtual devices.
 - Name your virtual device.
 - Click **Finish** to create the device.
 
-✅ The AVD will now appear in your **Virtual Device Manager** list.
+The AVD will now appear in your **Virtual Device Manager** list.
 
 ---
 
@@ -53,7 +53,7 @@ From here, you can create, manage, and run virtual devices.
 - In **Virtual Device Manager**, locate your new device.
 - Click the **Play** ▶️ button to launch the emulator.
 
-✅ The emulator acts like a real Android device, enabling you to test your React Native apps without connecting physical hardware.
+The emulator acts like a real Android device, enabling you to test your React Native apps without connecting physical hardware.
 
 ---
 
@@ -61,7 +61,7 @@ From here, you can create, manage, and run virtual devices.
 
 Once your Android Virtual Device (AVD) is running, you can launch your React Native app directly onto it using Expo CLI.
 
-✅ **Steps to Launch:**
+**Steps to Launch:**
 
 1. Open your project folder in a terminal.
 2. Start the Expo development server:
@@ -74,7 +74,7 @@ npm start
 
 - <span class="emphasis">a</span> to launch the app on your running Android emulator.
 
-✅ Expo CLI will automatically detect the emulator and install the app onto it without requiring a physical device.
+Expo CLI will automatically detect the emulator and install the app onto it without requiring a physical device.
 
 ---
 
