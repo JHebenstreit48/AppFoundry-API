@@ -37,13 +37,8 @@ The <span class="emphasis">Bare Workflow</span> is the standard React Native set
 - Watchman (recommended for macOS users).
 
 ✅ **Environment Setup:**
-- Install React Native CLI globally:
 
-```shell
-npm install -g react-native-cli
-```
-
-- Install dependencies for iOS:
+Install dependencies for iOS (CocoaPods):
 
 ```shell
 sudo gem install cocoapods
@@ -95,8 +90,20 @@ npx react-native run-ios
 
 ---
 
+### Legacy (historical reference)
+
+Deprecated global install (no longer recommended):
+
+```shell
+npm install -g react-native-cli
+```
+
 ✅ **Conclusion**
 
 The <span class="emphasis">Bare Workflow</span> via <span class="emphasis">React Native CLI</span> is ideal when you need full control and access to native platform capabilities.
 
 It's the professional choice for apps requiring advanced features and custom integrations.
+
+<div class="xrefBox">
+  <a href="/react-native/basics/fundamentals/setup">⬅️ Back to Setup</a>
+</div>

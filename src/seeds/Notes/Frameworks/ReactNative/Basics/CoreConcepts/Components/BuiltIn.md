@@ -21,8 +21,8 @@ Instead of placing text between tags, you specify the button text using the <spa
 
 **Important**:
 
-The <span class="codeSnip">&lt;Button&gt;</span> component **requires** a <span class="codeSnip">title</span> prop to display the label on the button.
-However, at this stage, the button will not perform any action because no listener has been added yet.
+- The <span class="codeSnip">&lt;Button&gt;</span> component **requires** a <span class="codeSnip">title</span> prop to display the label on the button.
+- At this stage, the button will not perform any action because no listener, such as onPress, has been added yet.
 
 ### Example: Creating a Button in a Basic Layout
 
@@ -53,143 +53,61 @@ const styles = StyleSheet.create({
 In this example:
 - A <span class="codeSnip">&lt;View&gt;</span> wraps multiple <span class="codeSnip">&lt;Text&gt;</span> elements and a <span class="codeSnip">&lt;Button&gt;</span>.
 - The <span class="codeSnip">&lt;Button&gt;</span> uses the <span class="codeSnip">title</span> prop to display "Tap me!" as its label.
-- No listener has been added yet, so the button will not perform any action when tapped.
+- Since no <span class="codeSnip">onPress</span> listener has been defined, the button will not perform any action when tapped.
 
 ---
-
 ### Styling Limitations with <span class="codeSnip">&lt;Button&gt;</span>
-
-The <span class="codeSnip">&lt;Button&gt;</span> component does not support the <span class="codeSnip">style</span> prop. This means you cannot directly apply styles such as background color or padding using the <span class="codeSnip">style</span> property.
-
-Because of this limitation, autocomplete will not work in VS Code for <span class="codeSnip">style</span> when using a <span class="codeSnip">&lt;Button&gt;</span>. If <span class="codeSnip">style</span> were supported, VS Code would show a [icon:wrench] icon to the left of the <span class="codeSnip">style</span> prop, indicating that it is a recognized, valid property.
-
-To create custom-styled buttons, consider using <span class="codeSnip">&lt;Pressable&gt;</span> or <span class="codeSnip">&lt;TouchableOpacity&gt;</span>, which allow full control over styling.
-
 ---
 
-### Handling Text
+The <span class="codeSnip">&lt;Button&gt;</span> component does not support the <span class="codeSnip">style</span> prop.  
+As a result, you cannot directly apply styles, such as background color, padding, or borders using <span class="codeSnip">inline style</span> properties.
 
-React Native components have specific rules about what content they can hold — stricter than web development.
+Because of this, IDEs such as VS Code won't provide autocomplete for <span class="codeSnip">style</span> when using a <span class="codeSnip">&lt;Button&gt;</span>.  
+If <span class="codeSnip">style</span> were supported, VS Code would show a [icon:wrench] icon to the left of the <span class="codeSnip">style</span> prop, indicating that it is a recognized, valid property.
 
-**Key Rule**:
+To create custom-style flexibility in buttons, consider using:
+- <span class="codeSnip">&lt;Pressable&gt;</span>  
+- <span class="codeSnip">&lt;TouchableOpacity&gt;</span>
 
-- You cannot insert plain text directly inside a <span class="codeSnip">&lt;View&gt;</span>.
-- Text must be wrapped inside a <span class="codeSnip">&lt;Text&gt;</span> component.
+These alternative components allow full control over styling and interactive behavior.
 
 ---
+### Example: Custom Button with &lt;Pressable&gt;
+---
 
-### Example: Web Development (Allowed)
+```js
+import { Pressable, Text, StyleSheet } from 'react-native';
 
-```javascript
-<div>Hello World!</div>
+export default function App() {
+  return (
+    <Pressable style={styles.button}>
+      <Text style={styles.text}>Custom Button</Text>
+    </Pressable>
+  );
+}
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: '#6200ee',
+    padding: 10,
+    borderRadius: 5
+  },
+  text: {
+    color: '#fff',
+    fontSize: 16
+  }
+});
 ```
 
-Raw text is directly allowed inside a <span class="codeSnip">&lt;div&gt;</span> in web development.
+This approach provides greater flexibility for appearance and interaction than the default <span class="codeSnip">&lt;Button&gt;</span> component.
 
 ---
-
-### Example: React Native (Incorrect)
-
-```javascript
-<View>Hello World!</View>
-```
-
-❌ In React Native, this will cause an error — <span class="codeSnip">&lt;View&gt;</span> cannot directly
-contain text.
-
+### Summary
 ---
 
-### Example: React Native (Correct)
-
-```javascript
-<View style={styles.container}>
-  <Text>Hello World!</Text>
-</View>
-```
-
-In React Native, text must be inside a <span class="codeSnip">&lt;Text&gt;</span> component.
-
----
-
-### Why This Rule Exists
-
-- <span class="codeSnip">&lt;View&gt;</span> is used for **layout and structure** — not for displaying raw
-  text.
-- **Displayable content** like text must be placed inside a component designed for it — like
-  <span class="codeSnip">&lt;Text&gt;</span>.
-- Other components like <span class="codeSnip">&lt;TextInput&gt;</span>,
-  <span class="codeSnip">&lt;Button&gt;</span>, and <span class="codeSnip">&lt;Image&gt;</span> also have
-  their own display rules.
-
----
-
-### Web vs React Native: Text Placement Rules
-
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Web (HTML)</th>
-      <th class="tableCellHeader">React Native (JSX)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">Text can be placed directly inside a <span class="codeSnip">&lt;div&gt;</span>.</td>
-      <td class="tableCell">Text must be wrapped inside a <span class="codeSnip">&lt;Text&gt;</span> component inside a <span class="codeSnip">&lt;View&gt;</span>.</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Elements like <span class="codeSnip">&lt;div&gt;</span> can render text by default.</td>
-      <td class="tableCell"><span class="codeSnip">&lt;View&gt;</span> cannot render text — only holds child components.</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Loose text is allowed anywhere inside tags.</td>
-      <td class="tableCell">Text must be explicitly placed inside <span class="codeSnip">&lt;Text&gt;</span> to render.</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-### More About <span class="codeSnip">&lt;View&gt;</span> and Layout Structure
-
-- The <span class="codeSnip">&lt;View&gt;</span> component is designed to **hold** and **lay out** other
-  components.
-- It acts like a **container**, similar to the <span class="codeSnip">&lt;div&gt;</span> tag in web
-  development.
-- Conceptually, it also covers layout roles similar to HTML tags like
-  <span class="codeSnip">&lt;section&gt;</span> and <span class="codeSnip">&lt;article&gt;</span>.
-- You can have **multiple child components** (such as multiple <span class="codeSnip">&lt;Text&gt;</span>
-  elements) inside a single <span class="codeSnip">&lt;View&gt;</span>.
-- **Nesting** is fully supported — you can place a <span class="codeSnip">&lt;View&gt;</span> inside another
-  <span class="codeSnip">&lt;View&gt;</span> to create hierarchical layouts.
-
-This makes <span class="codeSnip">&lt;View&gt;</span> extremely powerful for building complex and
-structured mobile UIs.
-
----
-
-### Example: Nested Views
-
-```javascript
-<View style={styles.parent}>
-  <Text>Parent Text</Text>
-  <View style={styles.child}>
-    <Text>Child Text</Text>
-  </View>
-</View>
-```
-
-Here, the inner <span class="codeSnip">&lt;View&gt;</span> is nested inside the outer
-<span class="codeSnip">&lt;View&gt;</span>, allowing for parent-child layout relationships.
-
----
-
-### Important Notes
-
-- These components are core to nearly every React Native app.
-- They are **platform-agnostic**, meaning you don’t need to worry about whether your code runs on Android or
-  iOS.
-- Each component comes with its own set of props to customize its behavior and appearance.
+- <span class="codeSnip">&lt;Button&gt;</span> is simple and cross-platform — perfect for quick prototyping.  
+- <span class="codeSnip">&lt;Pressable&gt;</span> and <span class="codeSnip">&lt;TouchableOpacity&gt;</span> allow custom styling and animation.  
+- Use <span class="codeSnip">&lt;Pressable&gt;</span> for modern designs requiring advanced control and visual feedback.
 
 ---
 
@@ -201,22 +119,3 @@ React Native documentation:
 <a href="/resources/frameworks/reactnative/basics#components" class="resourceLinks">
 Jump to Components Section
 </a>
-
----
-
-**Summary**
-
-Mastering the core components like <span class="codeSnip">&lt;View&gt;</span>,
-<span class="codeSnip">&lt;Text&gt;</span>, and <span class="codeSnip">&lt;TextInput&gt;</span> is essential
-for becoming proficient in React Native. These components form the foundation of app interfaces, providing
-layout, structure, text handling, and user interaction.  
-<span class="codeSnip">&lt;View&gt;</span> is like a **box** — useful for grouping and structuring content,
-similar to <span class="codeSnip">&lt;div&gt;</span>, <span class="codeSnip">&lt;section&gt;</span>, or
-<span class="codeSnip">&lt;article&gt;</span> in HTML.  
-<span class="codeSnip">&lt;Text&gt;</span> is used to display readable text and must wrap any visible text
-inside your layout.  
-Nesting of <span class="codeSnip">&lt;View&gt;</span> components is common and enables building complex and
-organized layouts in mobile apps.
-Must import <span class="codeSnip">TextInput</span> from <span class="codeSnip">react-native</span>.
-Self-closing syntax unless extended with additional props.
-Commonly used props: <span class="codeSnip">placeholder</span>, <span class="codeSnip">value</span>, <span class="codeSnip">onChangeText</span>.

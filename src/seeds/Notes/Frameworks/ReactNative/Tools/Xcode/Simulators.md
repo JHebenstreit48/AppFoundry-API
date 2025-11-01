@@ -1,133 +1,110 @@
-### Introduction to iOS Simulators
-
-The iOS Simulator is a key part of Xcode, allowing you to test iOS applications on virtual devices without needing a physical iPhone or iPad.
-
-Benefits:
-
-- Test on different iOS versions and device models.
-- No need for a physical device during early development.
-- Quickly switch between device types (iPhone, iPad, etc.).
+# iOS Simulator for React Native
 
 ---
 
-### Accessing Simulators
+## Introduction
 
-1. Open **Xcode**.
-2. Navigate to **Xcode** → **Settings** → **Components**.
-3. Install additional simulator runtimes if needed.
+The iOS Simulator (part of Xcode) lets you test RN apps on virtual iPhones/iPads without a physical device.
 
-OR
+Note: The iOS Simulator is <span class="emphasis">macOS-only</span>.
 
-- Open **Terminal** and run:
+---
 
-```shell
+## Open the Simulator
+
+From macOS:
+
+```bash 
 open -a Simulator
 ```
 
-This will directly launch the iOS Simulator.
+Or via Xcode:
+<span class="codeSnip">Xcode → Settings → Components</span> to install runtimes, then pick a device from the Xcode toolbar.
+
+Manage runtimes/devices:
+<a href="/xcode/basics/simulators/manage-runtimes">Xcode → Manage Runtimes &amp; Devices</a>.
 
 ---
 
-### Running Your App on the iOS Simulator with Expo
+## Run Your RN App (Expo)
 
-With your iOS Simulator running, you can launch your React Native app directly onto it using Expo CLI.
-
-✅ **Steps to Launch:**
-
-1. Open your project folder in a terminal.
-2. Start the Expo development server:
-
-```shell
+```bash 
 npm start
 ```
-`
-3. After the Metro Bundler opens, press:
 
-- <span class="emphasis">i</span> to launch the app on your running iOS simulator.
-
-✅ Expo CLI will automatically detect the simulator and install the app onto it without requiring a physical device.
+When Metro opens:
+- Press <span class="codeSnip">i</span> to launch on the running iOS Simulator (ensure it’s open first)
 
 ---
 
-### Important Notes
+## Run Your RN App (RN CLI)
 
-- **Mac Only**: The iOS simulator is only available on macOS systems with <span class="emphasis">Xcode</span> installed.
-- **Simulator Must Be Running**: Ensure that the iOS simulator is open before pressing <span class="emphasis">i</span> in the Metro Bundler.
+```bash 
+# Start Metro
+npm start
+```
 
----
+```bash 
+# In a second terminal
+npx react-native run-ios
+```
 
-### Troubleshooting Simulator Issues
+```bash 
+# Or target a device explicitly
+npx react-native run-ios --simulator "iPhone 15"
+```
 
-- **Simulator Not Detected?**
-  - Confirm that Xcode and its Command Line Tools are installed and up to date.
-  - Restart both the Simulator and Metro Bundler if detection fails.
-
-- **App Not Opening?**
-  - Try closing the Simulator and reopening it manually before pressing <span class="emphasis">i</span> again.
-
----
-
-### Quick Tip
-
-If you are not using a Mac or prefer real device testing, you can use the <span class="emphasis">Expo Go</span> app on your iPhone to scan the QR code displayed by the Metro Bundler.
+If a matching runtime isn’t installed, use Xcode to download it:
+<a href="/xcode/basics/simulators/manage-runtimes">Manage Runtimes &amp; Devices</a>.
 
 ---
 
-### Common Simulators Available
+## Useful Simulator Controls
 
-- iPhone 15, 15 Pro, 14, 14 Pro
-- iPhone SE (2nd and 3rd generation)
-- iPad Pro (various sizes)
-- iPad Air
+- <span class="codeSnip">Hardware → Keyboard → Toggle Software Keyboard</span>  
+- <span class="codeSnip">Device → Rotate Left/Right</span>  
+- <span class="codeSnip">Device → Erase All Content and Settings</span> (factory reset)  
+- <span class="codeSnip">Window → Scale</span> to change display size
 
-More simulators can be downloaded for older iOS versions.
-
----
-
-### Creating Custom Simulators
-
-You can create custom device configurations:
-
-1. Open **Simulator** app.
-2. Go to **File** → **New Simulator**.
-3. Choose a Device Type, iOS version, and name your simulator.
-
-Useful for testing on specific screen sizes or iOS versions not included by default.
+Resetting often fixes stubborn issues:
+<span class="codeSnip">Device → Erase All Content and Settings</span>.
 
 ---
 
-### Managing Simulators from Terminal
+## Terminal Automation (simctl)
 
-List all available simulators:
+List devices:
 
-```shell
+```bash 
 xcrun simctl list devices
 ```
 
-Boot a specific simulator:
+Boot a device:
 
-```shell
+```bash 
 xcrun simctl boot "iPhone 15"
-````
+```
+Shut down all:
 
-Shutdown simulators:
-
-```shell
+```bash 
 xcrun simctl shutdown all
 ```
 
-These commands are helpful for automating workflows.
+You can also use <span class="codeSnip">simctl</span> to take screenshots, record video, and more.
 
 ---
 
-### Resetting the Simulator
+## Troubleshooting
 
-If you encounter problems, reset the simulator to its default state:
+- <span class="emphasis">Simulator not detected by Metro</span>  
+  Ensure it’s open first; restart Simulator and Metro.  
+- <span class="emphasis">Build fails with iOS deployment target mismatch</span>  
+  Align your target in Xcode <span class="codeSnip">Build Settings</span> or update the runtime.  
+- <span class="emphasis">Network requests fail</span>  
+  Check macOS firewall/VPN; the simulator uses host networking.
 
-- In the **Simulator** app, go to **Device** → **Erase All Content and Settings**.
-
-This is equivalent to a factory reset and can solve many testing issues.
+For deeper tools coverage, see:
+<a href="/xcode/basics/simulators/custom-and-reset">Xcode → Custom Simulators &amp; Resets</a> and
+<a href="/xcode/advanced/diagnostics/device-logs-and-crashes">Xcode → Device Logs &amp; Crash Reports</a>.
 
 ---
-
-Now you are ready to run and test your React Native applications on a wide range of iOS simulators!

@@ -110,3 +110,7 @@ xcrun xctrace list devices
 Starting your app with <span class="emphasis">React Native CLI</span> is straightforward once your environment is properly set up.
 
 Use Metro to bundle your code, and target Android or iOS devices as needed for development and testing.
+
+<div class="xrefBox">
+  <a href="/tools/react-native-cli/setup">➡️ React Native CLI — Setup</a>
+</div>

@@ -83,6 +83,7 @@ The **Compound Component pattern** allows components to **work together without 
 
 **Example: Compound Components**
 ---
+
 ```javascript
 import React, { createContext, useContext, useState } from "react";
 import { View, Text, Button } from "react-native";
