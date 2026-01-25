@@ -16,9 +16,13 @@
 Getting Started with React Native  - (React Native Official)
 </a>
 
+<br>
+
 <a href="https://reactnative.dev/docs/intro-react" class="resourceLinks" target="_blank">
 React Fundamentals - (React Native Official)
 </a>
+
+<br>
 
 <a href="https://reactnative.dev/docs/set-up-your-environment" class="resourceLinks" target="_blank">
 Set Up Your Environment - (React Native Official)
