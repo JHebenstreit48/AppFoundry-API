@@ -1,33 +1,70 @@
+# Project Structure
+
+<hr class="dividerSection" />
+
 ## Introduction to Project Structure
+
+<hr class="dividerSection" />
 
 React Native projects follow a standard structure that helps organize your app into logical parts.
 
-**Key Highlights**:
-- The entry point of the app is the root component.
-- The project files are organized by platform and by features.
-- JavaScript and TypeScript are both supported.
+<hr class="dividerSubsection1" />
 
----
+### Key Highlights
 
-### Root Component and Entry Point
+<hr class="dividerSubsection1" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>The entry point of the app is the root component.</li>
+    <li>The project files are organized by platform and by features.</li>
+    <li>JavaScript and TypeScript are both supported.</li>
+  </ul>
+</div>
+
+<hr class="dividerSection" />
+
+## Root Component and Entry Point
+
+<hr class="dividerSection" />
 
 The root of every React Native app starts with the <span class="codeSnip">App</span> component.
 
-**Key Points**:
-- In JavaScript projects, the root file is <span class="codeSnip">App.js</span>.
-- In TypeScript projects, the root file is <span class="codeSnip">App.tsx</span>.
-- The root component is the starting point of the entire React component tree.
-- <span class="codeSnip">App.js</span> or <span class="codeSnip">App.tsx</span> is automatically registered and rendered by the native code (via <span class="codeSnip">index.js</span>).
+<hr class="dividerSubsection1" />
 
----
+### Key Points
 
-### Component Tree Structure
+<hr class="dividerSubsection1" />
 
-All other user interface elements and components must be placed **inside** the <span class="codeSnip">App</span> component or as **descendants** of it.
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>In JavaScript projects, the root file is <span class="codeSnip">App.js</span>.</li>
+    <li>In TypeScript projects, the root file is <span class="codeSnip">App.tsx</span>.</li>
+    <li>The root component is the starting point of the entire React component tree.</li>
+    <li><span class="codeSnip">App.js</span> or <span class="codeSnip">App.tsx</span> is automatically registered and rendered by the native code via <span class="codeSnip">index.js</span>.</li>
+  </ul>
+</div>
 
-**Key Concept**:
-- The <span class="codeSnip">App</span> component is the **single root** of the entire React Native application.
-- All child components (views, screens, buttons, inputs) must be nested within it.
+<hr class="dividerSection" />
+
+## Component Tree Structure
+
+<hr class="dividerSection" />
+
+All other user interface elements and components must be placed inside the <span class="codeSnip">App</span> component or as descendants of it.
+
+<hr class="dividerSubsection1" />
+
+### Key Concept
+
+<hr class="dividerSubsection1" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>The <span class="codeSnip">App</span> component is the <span class="emphasis">single root</span> of the entire React Native application.</li>
+    <li>All child components — views, screens, buttons, inputs — must be nested within it.</li>
+  </ul>
+</div>
 
 <table class="notesTable">
   <thead>
@@ -48,14 +85,25 @@ All other user interface elements and components must be placed **inside** the <
   </tbody>
 </table>
 
-**Why This Matters**:
-- React Native uses a single root approach — rendering begins at <span class="codeSnip">App</span>.
-- It ensures a predictable and efficient rendering pipeline.
-- It aligns with how React works in web development — everything is nested within one root.
+<hr class="dividerSubsection1" />
 
----
+### Why This Matters
 
-### Why .js and .tsx for the Root Component?
+<hr class="dividerSubsection1" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>React Native uses a single root approach — rendering begins at <span class="codeSnip">App</span>.</li>
+    <li>It ensures a predictable and efficient rendering pipeline.</li>
+    <li>It aligns with how React works in web development — everything is nested within one root.</li>
+  </ul>
+</div>
+
+<hr class="dividerSection" />
+
+## Why .js and .tsx for the Root Component?
+
+<hr class="dividerSection" />
 
 <table class="notesTable">
   <thead>
@@ -76,62 +124,103 @@ All other user interface elements and components must be placed **inside** the <
   </tbody>
 </table>
 
-**Important**:
-- <span class="codeSnip">.ts</span> files cannot contain JSX — only <span class="codeSnip">.tsx</span> files support it.
-- JSX is core to React Native UI development, so components must be <span class="codeSnip">.tsx</span> in TypeScript projects.
+<hr class="dividerSubsection1" />
 
----
+### Important
 
-### How TypeScript Works in React Native
+<hr class="dividerSubsection1" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">.ts</span> files cannot contain JSX — only <span class="codeSnip">.tsx</span> files support it.</li>
+    <li>JSX is core to React Native UI development, so components must be <span class="codeSnip">.tsx</span> in TypeScript projects.</li>
+  </ul>
+</div>
+
+<hr class="dividerSection" />
+
+## How TypeScript Works in React Native
+
+<hr class="dividerSection" />
 
 React Native integrates TypeScript seamlessly without the need for custom build steps.
 
-**Key Behavior**:
-- TypeScript sources are transformed by **Babel** during bundling.
-- The TypeScript compiler (<span class="codeSnip">tsc</span>) is used only for **type-checking**, not for code compilation.
-- This keeps the development workflow fast and efficient.
+<hr class="dividerSubsection1" />
 
----
+### Key Behavior
 
-### Typical Project File Structure
+<hr class="dividerSubsection1" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>TypeScript sources are transformed by <span class="emphasis">Babel</span> during bundling.</li>
+    <li>The TypeScript compiler (<span class="codeSnip">tsc</span>) is used only for <span class="emphasis">type-checking</span>, not for code compilation.</li>
+    <li>This keeps the development workflow fast and efficient.</li>
+  </ul>
+</div>
+
+<hr class="dividerSection" />
+
+## Typical Project File Structure
+
+<hr class="dividerSection" />
 
 <table class="notesTable">
   <thead>
     <tr class="tableHeader">
-      <th class="tableCellHeader">Folder/File</th>
+      <th class="tableCellHeader">Folder / File</th>
       <th class="tableCellHeader">Purpose</th>
     </tr>
   </thead>
   <tbody>
     <tr class="tableRow">
-      <td class="tableCell">App.js / App.tsx</td>
+      <td class="tableCell"><span class="codeSnip">App.js</span> / <span class="codeSnip">App.tsx</span></td>
       <td class="tableCell">Root component of the app; entry point for the UI.</td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">index.js</td>
+      <td class="tableCell"><span class="codeSnip">index.js</span></td>
       <td class="tableCell">Entry point for native code to launch the app; usually unchanged even in TypeScript projects.</td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">android/</td>
+      <td class="tableCell"><span class="codeSnip">android/</span></td>
       <td class="tableCell">Native Android project files (Gradle configuration, Java/Kotlin code).</td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">ios/</td>
+      <td class="tableCell"><span class="codeSnip">ios/</span></td>
       <td class="tableCell">Native iOS project files (Xcode project, Objective-C/Swift code).</td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">src/</td>
+      <td class="tableCell"><span class="codeSnip">src/</span></td>
       <td class="tableCell">Folder where app code is typically organized (components, screens, utilities, assets).</td>
     </tr>
   </tbody>
 </table>
 
----
+<hr class="dividerSection" />
 
-### Summary
+## Summary
 
-In a React Native project:
-- **<span class="codeSnip">App.js</span>** or **<span class="codeSnip">App.tsx</span>** serves as the root of the app.
-- **JavaScript** uses <span class="codeSnip">.js</span> files, but **TypeScript with JSX** requires <span class="codeSnip">.tsx</span>.
-- **Metro Bundler** handles bundling and Babel transforms both JavaScript and TypeScript sources.
-- The project structure is designed to keep app and native code logically separated and easy to manage.
+<hr class="dividerSection" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">App.js</span> or <span class="codeSnip">App.tsx</span> serves as the root of the app.</li>
+    <li>JavaScript uses <span class="codeSnip">.js</span> files, but TypeScript with JSX requires <span class="codeSnip">.tsx</span>.</li>
+    <li>Metro Bundler handles bundling and Babel transforms both JavaScript and TypeScript sources.</li>
+    <li>The project structure is designed to keep app and native code logically separated and easy to manage.</li>
+  </ul>
+</div>
+
+<hr class="dividerSection" />
+
+<div class="xrefNav">
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/fundamentals/setup">← Back</a>
+    <div class="xrefTitle">Fundamentals - Setup</div>
+  </div>
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/core/components/basics">Next →</a>
+    <div class="xrefTitle">Topic: Core Concepts - Components - Basics</div>
+  </div>
+</div>

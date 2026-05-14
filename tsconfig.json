@@ -7,9 +7,10 @@
     "resolveJsonModule": true,
     "outDir": "dist",
     "rootDir": "src",
-    "baseUrl": "src",
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["src/*"]
     },
     "types": ["node"],
     "skipLibCheck": true,
