@@ -1,80 +1,155 @@
-<br>
+# Project Setup Methods
 
-## Project Setup Methods
+<hr class="dividerSection" />
 
----
+## Setup Options
+
+<hr class="dividerSection" />
 
 There are two main ways to start a React Native project:
 
-- <span class="emphasis">Expo</span> — a <span class="secondEmphasis">managed workflow</span> for
-  <span class="secondEmphasis">rapid</span> development.
-- <span class="emphasis">React Native CLI</span> — a bare-bones approach offering full native control.
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="emphasis">Expo</span> — a <span class="secondEmphasis">managed workflow</span> for <span class="secondEmphasis">rapid</span> development.</li>
+    <li><span class="emphasis">React Native CLI</span> — a bare-bones approach offering full native control.</li>
+  </ul>
+</div>
 
 Each setup method fits different project needs and complexity levels.
 
----
+<hr class="dividerSection" />
 
-### Expo Quickstart
+## Expo Quickstart
 
-<span class="emphasis">Expo</span> is a free, open-source toolchain that simplifies React Native development
-by providing a managed environment.
+<hr class="dividerSection" />
 
-**Key Benefits:**
+<span class="emphasis">Expo</span> is a free, open-source toolchain that simplifies React Native development by providing a managed environment.
 
-- No need to install Android Studio or Xcode for basic development.
-- Built-in tools for testing, debugging, and live reloading.
-- Ideal for prototyping, small-to-medium apps, and rapid iteration.
+<hr class="dividerSubsection1" />
 
-This launches the Metro Bundler and opens Expo DevTools with a QR code you can scan using
-<span class="emphasis">Expo Go</span> to run the app on a physical device or emulator.
+### Key Benefits
 
-For full setup instructions, see  
-<a href="/react-native/tools/expo/cli/workflow">Expo — CLI Workflow</a>
+<hr class="dividerSubsection1" />
 
----
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>No need to install Android Studio or Xcode for basic development.</li>
+    <li>Built-in tools for testing, debugging, and live reloading.</li>
+    <li>Ideal for prototyping, small-to-medium apps, and rapid iteration.</li>
+  </ul>
+</div>
 
-### React Native CLI Quickstart
+This launches the Metro Bundler and opens Expo DevTools with a QR code you can scan using <span class="emphasis">Expo Go</span> to run the app on a physical device or emulator.
 
-<span class="emphasis">React Native CLI</span> is the official toolchain for apps requiring access to custom
-native code.
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/react-native/tools/expo/cli/workflow">
+    React Native → Tools → Expo → CLI Workflow
+  </a>
+</div>
 
-**Key Benefits:**
+<hr class="dividerSection" />
 
-- Full control over Android and iOS native layers.
-- Easier integration with Java, Kotlin, Objective-C, or Swift modules.
-- Ideal for production-grade apps needing platform-specific optimization.
+## React Native CLI Quickstart
 
-Requires Android Studio (for Android) and Xcode (for iOS) installed and configured.  
-For complete setup details, see  
-<a href="/tools/react-native-cli/setup">React Native CLI — Setup</a>
+<hr class="dividerSection" />
 
----
+<span class="emphasis">React Native CLI</span> is the official toolchain for apps requiring access to custom native code.
 
-### Language and Entry Files
+<hr class="dividerSubsection1" />
+
+### Key Benefits
+
+<hr class="dividerSubsection1" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>Full control over Android and iOS native layers.</li>
+    <li>Easier integration with Java, Kotlin, Objective-C, or Swift modules.</li>
+    <li>Ideal for production-grade apps needing platform-specific optimization.</li>
+  </ul>
+</div>
+
+Requires Android Studio (for Android) and Xcode (for iOS) installed and configured.
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/tools/react-native-cli/setup">
+    React Native → Tools → React Native CLI → Setup
+  </a>
+</div>
+
+<hr class="dividerSection" />
+
+## Language and Entry Files
+
+<hr class="dividerSection" />
 
 When you create a new React Native project:
 
-**Defaults:**
+<hr class="dividerSubsection1" />
 
-- Supports both <span class="emphasis">JavaScript</span> and <span class="emphasis">TypeScript</span> (choose
-  a TS template or add a <span class="codeSnip">tsconfig.json</span>).
-- TypeScript files that contain JSX must use the <span class="codeSnip">.tsx</span> extension.
+### Defaults
 
-**Root File:**
+<hr class="dividerSubsection1" />
 
-- JavaScript: <span class="codeSnip">App.js</span>
-- TypeScript: <span class="codeSnip">App.tsx</span>
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>Supports both <span class="emphasis">JavaScript</span> and <span class="emphasis">TypeScript</span> — choose a TS template or add a <span class="codeSnip">tsconfig.json</span>.</li>
+    <li>TypeScript files that contain JSX must use the <span class="codeSnip">.tsx</span> extension.</li>
+  </ul>
+</div>
 
-**Notes:**
+<hr class="dividerSubsection1" />
 
-- <span class="codeSnip">index.js</span> usually remains unchanged.
-- The <span class="codeSnip">&lt;App /&gt;</span> component is your primary entry point.
+### Root File
 
-For structure and architecture, see the <span class="emphasis">Project Structure</span> page.
+<hr class="dividerSubsection1" />
 
----
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Language</th>
+      <th class="tableCellHeader">Root File</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">JavaScript</td>
+      <td class="tableCell"><span class="codeSnip">App.js</span></td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">TypeScript</td>
+      <td class="tableCell"><span class="codeSnip">App.tsx</span></td>
+    </tr>
+  </tbody>
+</table>
 
-### Choosing Between Expo and React Native CLI
+<hr class="dividerSubsection1" />
+
+### Notes
+
+<hr class="dividerSubsection1" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">index.js</span> usually remains unchanged.</li>
+    <li>The <span class="codeSnip">&lt;App /&gt;</span> component is your primary entry point.</li>
+  </ul>
+</div>
+
+<div class="xrefBox">
+  <span class="emphasis">See:</span>
+  <a href="/react-native/basics/fundamentals/structure">
+    React Native → Basics → Fundamentals → Structure
+  </a>
+</div>
+
+<hr class="dividerSection" />
+
+## Choosing Between Expo and React Native CLI
+
+<hr class="dividerSection" />
 
 <table class="notesTable">
   <thead>
@@ -95,50 +170,88 @@ For structure and architecture, see the <span class="emphasis">Project Structure
   </tbody>
 </table>
 
----
+<hr class="dividerSection" />
 
-### Pros and Cons Overview
+## Pros and Cons Overview
 
-#### Expo
+<hr class="dividerSection" />
 
-**Pros**
+<hr class="dividerSubsection1" />
 
-- Fast and frictionless setup
-- No native build tools required initially
-- Live reload and testing via Expo Go
+### Expo
 
-**Cons**
+<hr class="dividerSubsection1" />
 
-- Limited access to native modules unless ejected
-- Slightly larger app binaries
-- Some advanced features require the bare workflow
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Pros</th>
+      <th class="tableCellHeader">Cons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">Fast and frictionless setup</td>
+      <td class="tableCell">Limited access to native modules unless ejected</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">No native build tools required initially</td>
+      <td class="tableCell">Slightly larger app binaries</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Live reload and testing via Expo Go</td>
+      <td class="tableCell">Some advanced features require the bare workflow</td>
+    </tr>
+  </tbody>
+</table>
 
-#### React Native CLI
+<hr class="dividerSubsection1" />
 
-**Pros**
+### React Native CLI
 
-- Full access to native APIs and libraries
-- Ideal for complex and performance-intensive apps
-- No limitations on third-party native modules
+<hr class="dividerSubsection1" />
 
-**Cons**
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Pros</th>
+      <th class="tableCellHeader">Cons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">Full access to native APIs and libraries</td>
+      <td class="tableCell">Requires Android Studio and Xcode</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Ideal for complex and performance-intensive apps</td>
+      <td class="tableCell">Higher setup complexity</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">No limitations on third-party native modules</td>
+      <td class="tableCell">Steeper learning curve</td>
+    </tr>
+  </tbody>
+</table>
 
-- Requires Android Studio and Xcode
-- Higher setup complexity
-- Steeper learning curve
+<hr class="dividerSection" />
 
----
+## Summary
 
-### Summary
+<hr class="dividerSection" />
 
-For beginners or fast iteration, start with <span class="emphasis">Expo</span>.  
-For advanced features and full native control, use <span class="emphasis">React Native CLI</span>.
+For beginners or fast iteration, start with <span class="emphasis">Expo</span>. For advanced features and full native control, use <span class="emphasis">React Native CLI</span>. Choosing the right setup depends on your project's scope, timeline, and technical needs.
 
-Choosing the right setup depends on your project’s scope, timeline, and technical needs.
+<hr class="dividerSection" />
 
----
+<div class="xrefNav">
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/fundamentals/introduction">← Back</a>
+    <div class="xrefTitle">Fundamentals - Introduction</div>
+  </div>
 
-<div class="xrefBox">
-  <span class="emphasis">Next:</span>
-<a href="/react-native/basics/fundamentals/structure">Project Structure</a>.
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/fundamentals/structure">Next →</a>
+    <div class="xrefTitle">Fundamentals - Structure</div>
+  </div>
 </div>
