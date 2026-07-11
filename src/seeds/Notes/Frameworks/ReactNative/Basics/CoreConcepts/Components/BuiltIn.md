@@ -1,32 +1,41 @@
-## &lt;Button&gt;
+# The &lt;Button&gt; Component
 
-----
+<hr class="dividerSection" />
 
-In React Native, buttons are created differently compared to React for web development.  
+## Buttons in React Native vs Web
 
-<br>
+<hr class="dividerSection" />
 
-<span class="emphasis">Key Differences</span>:  
-
-<br>
+In React Native, buttons are created differently compared to React for web development.
 
 In React (<span class="emphasis">Web</span>), you can place text <span class="emphasis">between</span> the <span class="secondEmphasis">opening</span> and <span class="secondEmphasis">closing</span> tags:
 
-```javascript
+```js
 <button>Click Me</button>
 ```
 
-In React Native, the <span class="codeSnip">&lt;Button&gt;</span> component is a **self-closing** element.
+In React Native, the <span class="codeSnip">&lt;Button&gt;</span> component is a <span class="emphasis">self-closing</span> element.
+
 Instead of placing text between tags, you specify the button text using the <span class="codeSnip">title</span> prop.
 
-**Important**:
+### Important Notes
 
-- The <span class="codeSnip">&lt;Button&gt;</span> component **requires** a <span class="codeSnip">title</span> prop to display the label on the button.
-- At this stage, the button will not perform any action because no listener, such as onPress, has been added yet.
+<hr class="dividerSubsection1" />
 
-### Example: Creating a Button in a Basic Layout
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>The <span class="codeSnip">&lt;Button&gt;</span> component <span class="emphasis">requires</span> a <span class="codeSnip">title</span> prop to display the label on the button.</li>
+    <li>At this stage, the button will not perform any action because no listener such as <span class="codeSnip">onPress</span> has been added yet.</li>
+  </ul>
+</div>
 
-```javascript
+<hr class="dividerSection" />
+
+## Example — Creating a Button in a Basic Layout
+
+<hr class="dividerSection" />
+
+```js
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
@@ -51,29 +60,45 @@ const styles = StyleSheet.create({
 ```
 
 In this example:
-- A <span class="codeSnip">&lt;View&gt;</span> wraps multiple <span class="codeSnip">&lt;Text&gt;</span> elements and a <span class="codeSnip">&lt;Button&gt;</span>.
-- The <span class="codeSnip">&lt;Button&gt;</span> uses the <span class="codeSnip">title</span> prop to display "Tap me!" as its label.
-- Since no <span class="codeSnip">onPress</span> listener has been defined, the button will not perform any action when tapped.
 
----
-### Styling Limitations with <span class="codeSnip">&lt;Button&gt;</span>
----
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>A <span class="codeSnip">&lt;View&gt;</span> wraps multiple <span class="codeSnip">&lt;Text&gt;</span> elements and a <span class="codeSnip">&lt;Button&gt;</span>.</li>
+    <li>The <span class="codeSnip">&lt;Button&gt;</span> uses the <span class="codeSnip">title</span> prop to display "Tap me!" as its label.</li>
+    <li>Since no <span class="codeSnip">onPress</span> listener has been defined, the button will not perform any action when tapped.</li>
+  </ul>
+</div>
 
-The <span class="codeSnip">&lt;Button&gt;</span> component does not support the <span class="codeSnip">style</span> prop.  
-As a result, you cannot directly apply styles, such as background color, padding, or borders using <span class="codeSnip">inline style</span> properties.
+<hr class="dividerSection" />
 
-Because of this, IDEs such as VS Code won't provide autocomplete for <span class="codeSnip">style</span> when using a <span class="codeSnip">&lt;Button&gt;</span>.  
-If <span class="codeSnip">style</span> were supported, VS Code would show a [icon:wrench] icon to the left of the <span class="codeSnip">style</span> prop, indicating that it is a recognized, valid property.
+## Styling Limitations with &lt;Button&gt;
+
+<hr class="dividerSection" />
+
+The <span class="codeSnip">&lt;Button&gt;</span> component does not support the <span class="codeSnip">style</span> prop.
+
+As a result, you cannot directly apply styles such as background color, padding, or borders using inline style properties.
+
+Because of this, IDEs such as VS Code will not provide autocomplete for <span class="codeSnip">style</span> when using a <span class="codeSnip">&lt;Button&gt;</span>.
+
+If <span class="codeSnip">style</span> were supported, VS Code would show a wrench icon to the left of the <span class="codeSnip">style</span> prop, indicating that it is a recognized, valid property.
 
 To create custom-style flexibility in buttons, consider using:
-- <span class="codeSnip">&lt;Pressable&gt;</span>  
-- <span class="codeSnip">&lt;TouchableOpacity&gt;</span>
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">&lt;Pressable&gt;</span></li>
+    <li><span class="codeSnip">&lt;TouchableOpacity&gt;</span></li>
+  </ul>
+</div>
 
 These alternative components allow full control over styling and interactive behavior.
 
----
-### Example: Custom Button with &lt;Pressable&gt;
----
+<hr class="dividerSection" />
+
+## Example — Custom Button with &lt;Pressable&gt;
+
+<hr class="dividerSection" />
 
 ```js
 import { Pressable, Text, StyleSheet } from 'react-native';
@@ -101,21 +126,32 @@ const styles = StyleSheet.create({
 
 This approach provides greater flexibility for appearance and interaction than the default <span class="codeSnip">&lt;Button&gt;</span> component.
 
----
-### Summary
----
+<hr class="dividerSection" />
 
-- <span class="codeSnip">&lt;Button&gt;</span> is simple and cross-platform — perfect for quick prototyping.  
-- <span class="codeSnip">&lt;Pressable&gt;</span> and <span class="codeSnip">&lt;TouchableOpacity&gt;</span> allow custom styling and animation.  
-- Use <span class="codeSnip">&lt;Pressable&gt;</span> for modern designs requiring advanced control and visual feedback.
+## Summary
 
----
+<hr class="dividerSection" />
 
-### Where to Find More
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">&lt;Button&gt;</span> is simple and cross-platform — perfect for quick prototyping.</li>
+    <li><span class="codeSnip">&lt;Pressable&gt;</span> and <span class="codeSnip">&lt;TouchableOpacity&gt;</span> allow custom styling and animation.</li>
+    <li>Use <span class="codeSnip">&lt;Pressable&gt;</span> for modern designs requiring advanced control and visual feedback.</li>
+  </ul>
+</div>
 
-The complete list of React Native components, along with detailed documentation, can be found in the official
-React Native documentation:
+<hr class="dividerSection" />
 
-<a href="/resources/frameworks/reactnative/basics#components" class="resourceLinks">
-Jump to Components Section
-</a>
+<div class="xrefNav">
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/core/components/core">← Back</a>
+    <div class="xrefTitle">React Native → Components → Core</div>
+  </div>
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/core/components/patterns">Next →</a>
+    <div class="xrefTitle">React Native → Components → Patterns</div>
+  </div>
+  
+</div>

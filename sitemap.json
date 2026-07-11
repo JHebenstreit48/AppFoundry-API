@@ -20,16 +20,6 @@
     "category": "Frameworks/ReactNative/Basics/Fundamentals"
   },
   {
-    "path": "Frameworks/ReactNative/Basics/Navigation/Stack",
-    "title": "Stack",
-    "category": "Frameworks/ReactNative/Basics/Navigation"
-  },
-  {
-    "path": "Frameworks/ReactNative/Intermediate/Features/DeviceAPIs",
-    "title": "DeviceAPIs",
-    "category": "Frameworks/ReactNative/Intermediate/Features"
-  },
-  {
     "path": "Frameworks/ReactNative/Tools/AndroidStudio/AVDs",
     "title": "AVDs",
     "category": "Frameworks/ReactNative/Tools/AndroidStudio"
@@ -38,6 +28,26 @@
     "path": "Frameworks/ReactNative/Tools/AndroidStudio/BuildAndSDKSetup",
     "title": "BuildAndSDKSetup",
     "category": "Frameworks/ReactNative/Tools/AndroidStudio"
+  },
+  {
+    "path": "Frameworks/ReactNative/Basics/Navigation/Stack",
+    "title": "Stack",
+    "category": "Frameworks/ReactNative/Basics/Navigation"
+  },
+  {
+    "path": "Frameworks/ReactNative/Tools/Xcode/SignAndRun",
+    "title": "SignAndRun",
+    "category": "Frameworks/ReactNative/Tools/Xcode"
+  },
+  {
+    "path": "Frameworks/ReactNative/Tools/Xcode/Simulators",
+    "title": "Simulators",
+    "category": "Frameworks/ReactNative/Tools/Xcode"
+  },
+  {
+    "path": "Frameworks/ReactNative/Intermediate/Features/DeviceAPIs",
+    "title": "DeviceAPIs",
+    "category": "Frameworks/ReactNative/Intermediate/Features"
   },
   {
     "path": "Frameworks/ReactNative/Tools/ReactNativeCLI/Overview",
@@ -55,29 +65,9 @@
     "category": "Frameworks/ReactNative/Tools/ReactNativeCLI"
   },
   {
-    "path": "Frameworks/ReactNative/Tools/Xcode/SignAndRun",
-    "title": "SignAndRun",
-    "category": "Frameworks/ReactNative/Tools/Xcode"
-  },
-  {
-    "path": "Frameworks/ReactNative/Tools/Xcode/Simulators",
-    "title": "Simulators",
-    "category": "Frameworks/ReactNative/Tools/Xcode"
-  },
-  {
     "path": "Tools/AndroidStudio/Basics/Fundamentals/InstallationAndSDK.",
     "title": "InstallationAndSDK.",
     "category": "Tools/AndroidStudio/Basics/Fundamentals"
-  },
-  {
-    "path": "Tools/Xcode/Advanced/SigningAndDistribute/CertsAndProvisioning",
-    "title": "CertsAndProvisioning",
-    "category": "Tools/Xcode/Advanced/SigningAndDistribute"
-  },
-  {
-    "path": "Tools/Xcode/Advanced/SigningAndDistribute/SchemesAndBuild",
-    "title": "SchemesAndBuild",
-    "category": "Tools/Xcode/Advanced/SigningAndDistribute"
   },
   {
     "path": "Tools/Xcode/Advanced/Diagnostics/DeviceLogsAndCrash",
@@ -90,16 +80,6 @@
     "category": "Tools/Xcode/Advanced/Diagnostics"
   },
   {
-    "path": "Tools/Xcode/Basics/Simulators/CustomSimsAndResets",
-    "title": "CustomSimsAndResets",
-    "category": "Tools/Xcode/Basics/Simulators"
-  },
-  {
-    "path": "Tools/Xcode/Basics/Simulators/ManageRuntimes",
-    "title": "ManageRuntimes",
-    "category": "Tools/Xcode/Basics/Simulators"
-  },
-  {
     "path": "Tools/Xcode/Basics/Fundamentals/FirstRunUpdates",
     "title": "FirstRunUpdates",
     "category": "Tools/Xcode/Basics/Fundamentals"
@@ -108,6 +88,16 @@
     "path": "Tools/Xcode/Basics/Fundamentals/Installation",
     "title": "Installation",
     "category": "Tools/Xcode/Basics/Fundamentals"
+  },
+  {
+    "path": "Tools/Xcode/Advanced/SigningAndDistribute/CertsAndProvisioning",
+    "title": "CertsAndProvisioning",
+    "category": "Tools/Xcode/Advanced/SigningAndDistribute"
+  },
+  {
+    "path": "Tools/Xcode/Advanced/SigningAndDistribute/SchemesAndBuild",
+    "title": "SchemesAndBuild",
+    "category": "Tools/Xcode/Advanced/SigningAndDistribute"
   },
   {
     "path": "Frameworks/ReactNative/Basics/CoreConcepts/Components/Basics",
@@ -140,8 +130,18 @@
     "category": "Frameworks/ReactNative/Basics/CoreConcepts/JSXTSXEvent"
   },
   {
-    "path": "Frameworks/ReactNative/Tools/Expo/CLI/Overview",
-    "title": "Overview",
+    "path": "Tools/Xcode/Basics/Simulators/CustomSimsAndResets",
+    "title": "CustomSimsAndResets",
+    "category": "Tools/Xcode/Basics/Simulators"
+  },
+  {
+    "path": "Tools/Xcode/Basics/Simulators/ManageRuntimes",
+    "title": "ManageRuntimes",
+    "category": "Tools/Xcode/Basics/Simulators"
+  },
+  {
+    "path": "Frameworks/ReactNative/Tools/Expo/CLI/Introduction",
+    "title": "Introduction",
     "category": "Frameworks/ReactNative/Tools/Expo/CLI"
   },
   {
@@ -173,16 +173,6 @@
     "path": "Frameworks/ReactNative/Basics/CoreConcepts/PropsState/Fundamentals/State",
     "title": "State",
     "category": "Frameworks/ReactNative/Basics/CoreConcepts/PropsState/Fundamentals"
-  },
-  {
-    "path": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Fundamentals/Basics",
-    "title": "Basics",
-    "category": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Fundamentals"
-  },
-  {
-    "path": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Fundamentals/Layout",
-    "title": "Layout",
-    "category": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Fundamentals"
   },
   {
     "path": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Properties/Basics",
@@ -218,5 +208,15 @@
     "path": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Properties/Typography",
     "title": "Typography",
     "category": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Properties"
+  },
+  {
+    "path": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Fundamentals/Basics",
+    "title": "Basics",
+    "category": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Fundamentals"
+  },
+  {
+    "path": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Fundamentals/Layout",
+    "title": "Layout",
+    "category": "Frameworks/ReactNative/Basics/CoreConcepts/Styling/Fundamentals"
   }
 ]

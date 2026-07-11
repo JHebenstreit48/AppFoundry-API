@@ -1,4 +1,10 @@
-### Common Components
+# Core Components in React Native
+
+<hr class="dividerSection" />
+
+## Common Components
+
+<hr class="dividerSection" />
 
 <table class="notesTable">
   <thead>
@@ -9,33 +15,42 @@
   </thead>
   <tbody>
     <tr class="tableRow">
-      <td class="tableCell">View</td>
+      <td class="tableCell"><span class="codeSnip">View</span></td>
       <td class="tableCell">Acts as a container for layout and styling, similar to a div in web development.</td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">Text</td>
+      <td class="tableCell"><span class="codeSnip">Text</span></td>
       <td class="tableCell">Displays readable text on the screen.</td>
     </tr>
     <tr class="tableRow">
-      <td class="tableCell">TextInput</td>
+      <td class="tableCell"><span class="codeSnip">TextInput</span></td>
       <td class="tableCell">Allows the user to enter text input, such as for forms or search fields.</td>
     </tr>
   </tbody>
 </table>
 
----
-### Handling Text and Layout Rules
----
+<hr class="dividerSection" />
+
+## Handling Text and Layout Rules
+
+<hr class="dividerSection" />
 
 React Native components have specific rules about what content they can hold — stricter than web development.
 
-**Key Rule**:
-- You cannot insert plain text directly inside a <span class="codeSnip">&lt;View&gt;</span>.
-- Text must be wrapped inside a <span class="codeSnip">&lt;Text&gt;</span> component.
+### Key Rule
 
----
+<hr class="dividerSubsection1" />
 
-### Example: Web Development (Allowed)
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>You cannot insert plain text directly inside a <span class="codeSnip">&lt;View&gt;</span>.</li>
+    <li>Text must be wrapped inside a <span class="codeSnip">&lt;Text&gt;</span> component.</li>
+  </ul>
+</div>
+
+<hr class="dividerExample" />
+
+#### Example — Web Development (Allowed)
 
 ```html
 <div>Hello World!</div>
@@ -43,17 +58,20 @@ React Native components have specific rules about what content they can hold —
 
 Raw text is directly allowed inside a <span class="codeSnip">&lt;div&gt;</span> in web development.
 
----
+<hr class="dividerExample" />
 
-### Example: React Native (Incorrect)
+#### Example — React Native (Incorrect)
 
 ```js
 <View>Hello World!</View>
 ```
 
-❌ In React Native, this will cause an error — <span class="codeSnip">&lt;View&gt;</span> cannot directly contain text.
+In React Native this will cause an error — <span class="codeSnip">&lt;View&gt;</span> cannot directly contain
+text.
 
-### Example: React Native (Correct)
+<hr class="dividerExample" />
+
+#### Example — React Native (Correct)
 
 ```js
 <View style={styles.container}>
@@ -63,16 +81,25 @@ Raw text is directly allowed inside a <span class="codeSnip">&lt;div&gt;</span> 
 
 In React Native, text must be inside a <span class="codeSnip">&lt;Text&gt;</span> component.
 
----
-### Why This Rule Exists
----
+<hr class="dividerSection" />
 
-- <span class="codeSnip">&lt;View&gt;</span> is used for **layout and structure** — not for displaying raw text.  
-- **Displayable content** like text must be placed inside a component designed for it — such as <span class="codeSnip">&lt;Text&gt;</span>.  
-- Other components like <span class="codeSnip">&lt;TextInput&gt;</span>, <span class="codeSnip">&lt;Button&gt;</span>, and <span class="codeSnip">&lt;Image&gt;</span> also have their own display rules.
+## Why This Rule Exists
 
----
-### Web vs React Native: Text Placement Rules
+<hr class="dividerSection" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">&lt;View&gt;</span> is used for <span class="emphasis">layout and structure</span> — not for displaying raw text.</li>
+    <li><span class="emphasis">Displayable content</span> like text must be placed inside a component designed for it — such as <span class="codeSnip">&lt;Text&gt;</span>.</li>
+    <li>Other components like <span class="codeSnip">&lt;TextInput&gt;</span>, <span class="codeSnip">&lt;Button&gt;</span>, and <span class="codeSnip">&lt;Image&gt;</span> also have their own display rules.</li>
+  </ul>
+</div>
+
+<hr class="dividerSection" />
+
+## Web vs React Native: Text Placement Rules
+
+<hr class="dividerSection" />
 
 <table class="notesTable">
   <thead>
@@ -97,11 +124,13 @@ In React Native, text must be inside a <span class="codeSnip">&lt;Text&gt;</span
   </tbody>
 </table>
 
----
+<hr class="dividerSection" />
 
-### Example: Building a Custom Component
+## Example — Building a Custom Component
 
-```javascript
+<hr class="dividerSection" />
+
+```js
 const MyTitle = (props) => {
   return (
     <View>
@@ -113,83 +142,132 @@ const MyTitle = (props) => {
 
 In this example:
 
-- <span class="codeSnip">MyTitle</span> is a **custom component**.
-- It **combines Core Components**: <span class="codeSnip">View</span> and <span class="codeSnip">Text</span>.
-- It uses <span class="codeSnip">props</span> to pass dynamic data into the component.
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">MyTitle</span> is a <span class="emphasis">custom component</span>.</li>
+    <li>It <span class="emphasis">combines Core Components</span> — <span class="codeSnip">View</span> and <span class="codeSnip">Text</span>.</li>
+    <li>It uses <span class="codeSnip">props</span> to pass dynamic data into the component.</li>
+  </ul>
+</div>
 
-**Summary**: React Native allows you to build flexible, scalable UIs by composing built-in Core Components —
-just like React for web and HTML element composition.
+React Native allows you to build flexible, scalable UIs by composing built-in Core Components — just like
+React for web and HTML element composition.
 
----
+<hr class="dividerSection" />
 
-### About TextInput in React Native
+## About TextInput in React Native
 
-The <span class="codeSnip">&lt;TextInput&gt;</span> component in React Native allows users to **enter text**.  
-It must be **imported** just like all other core components.
+<hr class="dividerSection" />
 
-The <span class="codeSnip">&lt;TextInput&gt;</span> component is a **self-closing** component.
+The <span class="codeSnip">&lt;TextInput&gt;</span> component in React Native allows users to
+<span class="emphasis">enter text</span>.
 
-Example:
+It must be <span class="emphasis">imported</span> just like all other core components.
 
-```js
-import { TextInput } from 'react-native';
+The <span class="codeSnip">&lt;TextInput&gt;</span> component is a <span class="emphasis">self-closing</span>
+component.
 
-export default function App() {
-  return (
-    <TextInput />
-  );
-}
-```
+<hr class="dividerExample" />
 
-You can also add a <span class="codeSnip">placeholder</span> prop inside the <span class="codeSnip">&lt;TextInput&gt;</span> component:
-
-Example:
+#### Example
 
 ```js
 import { TextInput } from 'react-native';
 
 export default function App() {
-  return (
-    <TextInput placeholder="Your placeholder text here" />
-  );
+  return <TextInput />;
 }
 ```
 
-### More About <span class="codeSnip">&lt;View&gt;</span> and Layout Structure
+You can also add a <span class="codeSnip">placeholder</span> prop inside the
+<span class="codeSnip">&lt;TextInput&gt;</span> component:
 
-- The <span class="codeSnip">&lt;View&gt;</span> component is designed to **hold** and **lay out** other components.  
-- It acts like a **container**, similar to the <span class="codeSnip">&lt;div&gt;</span> tag in web development.  
-- Conceptually, it also covers layout roles similar to HTML tags like <span class="codeSnip">&lt;section&gt;</span> and <span class="codeSnip">&lt;article&gt;</span>.  
-- You can have **multiple child components** (such as multiple <span class="codeSnip">&lt;Text&gt;</span> elements) inside a single <span class="codeSnip">&lt;View&gt;</span>.  
-- **Nesting** is fully supported — you can place a <span class="codeSnip">&lt;View&gt;</span> inside another <span class="codeSnip">&lt;View&gt;</span> to create hierarchical layouts.
+<hr class="dividerExample" />
 
-This makes <span class="codeSnip">&lt;View&gt;</span> extremely powerful for building complex and
-structured mobile UIs.
+#### Example — With Placeholder
 
+```js
+import { TextInput } from 'react-native';
 
----
+export default function App() {
+  return <TextInput placeholder="Your placeholder text here" />;
+}
+```
 
-### Example: Nested Views
+<hr class="dividerSection" />
 
+## More About &lt;View&gt; and Layout Structure
+
+<hr class="dividerSection" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>The <span class="codeSnip">&lt;View&gt;</span> component is designed to <span class="emphasis">hold</span> and <span class="emphasis">lay out</span> other components.</li>
+    <li>It acts like a <span class="emphasis">container</span>, similar to the <span class="codeSnip">&lt;div&gt;</span> tag in web development.</li>
+    <li>Conceptually it also covers layout roles similar to HTML tags like <span class="codeSnip">&lt;section&gt;</span> and <span class="codeSnip">&lt;article&gt;</span>.</li>
+    <li>You can have <span class="emphasis">multiple child components</span> such as multiple <span class="codeSnip">&lt;Text&gt;</span> elements inside a single <span class="codeSnip">&lt;View&gt;</span>.</li>
+    <li><span class="emphasis">Nesting</span> is fully supported — you can place a <span class="codeSnip">&lt;View&gt;</span> inside another <span class="codeSnip">&lt;View&gt;</span> to create hierarchical layouts.</li>
+  </ul>
+</div>
+
+This makes <span class="codeSnip">&lt;View&gt;</span> extremely powerful for building complex and structured
+mobile UIs.
+
+<hr class="dividerExample" />
+
+#### Example — Nested Views
+
+```js
 <View style={styles.parent}>
   <Text>Parent Text</Text>
   <View style={styles.child}>
     <Text>Child Text</Text>
   </View>
 </View>
+```
 
-Here, the inner <span class="codeSnip">&lt;View&gt;</span> is nested inside the outer <span class="codeSnip">&lt;View&gt;</span>, allowing for parent-child layout relationships.
+Here the inner <span class="codeSnip">&lt;View&gt;</span> is nested inside the outer
+<span class="codeSnip">&lt;View&gt;</span>, allowing for parent-child layout relationships.
 
----
-### Text vs TextInput
----
+<hr class="dividerSection" />
 
-- <span class="codeSnip">&lt;Text&gt;</span> is used to **display static text**.
-- <span class="codeSnip">&lt;TextInput&gt;</span> is used to **allow the user to input text** in a field.
+## Text vs TextInput
 
----
-### Summary
----
-Mastering core components like <span class="codeSnip">&lt;View&gt;</span>, <span class="codeSnip">&lt;Text&gt;</span>, and <span class="codeSnip">&lt;TextInput&gt;</span> is essential for building effective layouts in React Native.  
-These components form the foundation of app interfaces, providing structure, text handling, and user input.  
+<hr class="dividerSection" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="codeSnip">&lt;Text&gt;</span> is used to <span class="emphasis">display static text</span>.</li>
+    <li><span class="codeSnip">&lt;TextInput&gt;</span> is used to <span class="emphasis">allow the user to input text</span> in a field.</li>
+  </ul>
+</div>
+
+<hr class="dividerSection" />
+
+## Summary
+
+<hr class="dividerSection" />
+
+Mastering core components like <span class="codeSnip">&lt;View&gt;</span>,
+<span class="codeSnip">&lt;Text&gt;</span>, and <span class="codeSnip">&lt;TextInput&gt;</span> is essential
+for building effective layouts in React Native.
+
+These components form the foundation of app interfaces, providing structure, text handling, and user input.
+
 Nesting and composition of these components enable complex yet maintainable UI designs.
+
+<hr class="dividerSection" />
+
+<div class="xrefNav">
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/core/components/basics">← Back</a>
+    <div class="xrefTitle">React Native → Components → Basics</div>
+  </div>
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/core/components/built-in">Next →</a>
+    <div class="xrefTitle">React Native → Components → Built-In</div>
+  </div>
+  
+</div>

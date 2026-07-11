@@ -1,18 +1,26 @@
-## **Patterns**
----
+# Advanced Component Patterns in React Native
 
-React Native supports **advanced patterns** for **building reusable, scalable, and flexible components**.
+<hr class="dividerSection" />
 
----
-### **1. Higher-Order Components (HOCs)**
----
+## Overview
 
-A **Higher-Order Component (HOC)** is a function that **takes a component and returns a new component**.
+<hr class="dividerSection" />
 
-**Example: Higher-Order Component**
----
+React Native supports advanced patterns for building <span class="emphasis">reusable</span>, <span class="emphasis">scalable</span>, and <span class="emphasis">flexible</span> components.
 
-```javascript
+<hr class="dividerSection" />
+
+## Higher-Order Components (HOCs)
+
+<hr class="dividerSection" />
+
+A <span class="emphasis">Higher-Order Component (HOC)</span> is a function that <span class="emphasis">takes a component and returns a new component</span>.
+
+<hr class="dividerExample" />
+
+#### Example — Higher-Order Component
+
+```js
 import React from "react";
 import { View, Text } from "react-native";
 
@@ -40,16 +48,19 @@ export default function App() {
 }
 ```
 
----
-### **2. Render Props Pattern**
----
+<hr class="dividerSection" />
 
-**Render props** allow sharing **component logic** using a function as a prop.
+## Render Props Pattern
 
-**Example: Render Props Pattern**
----
+<hr class="dividerSection" />
 
-```javascript
+<span class="emphasis">Render props</span> allow sharing <span class="emphasis">component logic</span> using a function as a prop.
+
+<hr class="dividerExample" />
+
+#### Example — Render Props Pattern
+
+```js
 import React, { useState } from "react";
 import { View, Text, Button } from "react-native";
 
@@ -75,16 +86,19 @@ export default function App() {
 }
 ```
 
----
-### **3. Compound Components Pattern**
----
+<hr class="dividerSection" />
 
-The **Compound Component pattern** allows components to **work together without relying on props**.
+## Compound Components Pattern
 
-**Example: Compound Components**
----
+<hr class="dividerSection" />
 
-```javascript
+The <span class="emphasis">Compound Component pattern</span> allows components to <span class="emphasis">work together without relying on props</span>.
+
+<hr class="dividerExample" />
+
+#### Example — Compound Components
+
+```js
 import React, { createContext, useContext, useState } from "react";
 import { View, Text, Button } from "react-native";
 
@@ -119,41 +133,87 @@ export default function App() {
 }
 ```
 
----
-### **Comparison of Advanced Component Patterns**
----
+<hr class="dividerSection" />
+
+## Comparison of Advanced Component Patterns
+
+<hr class="dividerSection" />
 
 <table class="notesTable">
-    <thead>
-        <tr class="tableHeader">
-            <th class="tableCellHeader">Pattern</th>
-            <th class="tableCellHeader">Purpose</th>
-            <th class="tableCellHeader">Example Use Case</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="tableRow">
-            <td class="tableCell"><strong>Higher-Order Components (HOC)</strong></td>
-            <td class="tableCell">Enhance components with additional behavior</td>
-            <td class="tableCell"><span class="codeSnip">withAuth(Component)</span> for authentication</td>
-        </tr>
-        <tr class="tableRow">
-            <td class="tableCell"><strong>Render Props</strong></td>
-            <td class="tableCell">Share logic dynamically through function props</td>
-            <td class="tableCell"><span class="codeSnip">Counter with render prop</span></td>
-        </tr>
-        <tr class="tableRow">
-            <td class="tableCell"><strong>Compound Components</strong></td>
-            <td class="tableCell">Allow components to communicate without direct props</td>
-            <td class="tableCell"><span class="codeSnip">Toggle component with context</span></td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Pattern</th>
+      <th class="tableCellHeader">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="emphasis">Higher-Order Components (HOC)</span></td>
+      <td class="tableCell">Enhance components with additional behavior</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="emphasis">Render Props</span></td>
+      <td class="tableCell">Share logic dynamically through function props</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="emphasis">Compound Components</span></td>
+      <td class="tableCell">Allow components to communicate without direct props</td>
+    </tr>
+  </tbody>
 </table>
 
----
-### **Conclusion**
----
-- **HOCs** wrap components to extend functionality.  
-- **Render props** pass functions to allow flexible rendering.  
-- **Compound components** share state through context instead of passing props down manually.  
-- Choosing the **right pattern** depends on **scalability, maintainability, and component structure needs**.
+<hr class="dividerSubsection1" />
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Pattern</th>
+      <th class="tableCellHeader">Example Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="emphasis">Higher-Order Components (HOC)</span></td>
+      <td class="tableCell"><span class="codeSnip">withAuth(Component)</span> for authentication</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="emphasis">Render Props</span></td>
+      <td class="tableCell"><span class="codeSnip">Counter with render prop</span></td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="emphasis">Compound Components</span></td>
+      <td class="tableCell"><span class="codeSnip">Toggle component with context</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="dividerSection" />
+
+## Summary
+
+<hr class="dividerSection" />
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li><span class="emphasis">HOCs</span> wrap components to extend functionality.</li>
+    <li><span class="emphasis">Render props</span> pass functions to allow flexible rendering.</li>
+    <li><span class="emphasis">Compound components</span> share state through context instead of passing props down manually.</li>
+    <li>Choosing the <span class="emphasis">right pattern</span> depends on scalability, maintainability, and component structure needs.</li>
+  </ul>
+</div>
+
+<hr class="dividerSection" />
+
+<div class="xrefNav">
+
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/core/components/built-in">← Back</a>
+    <div class="xrefTitle">React Native → Components → Built-In</div>
+  </div>
+  
+  <div class="xrefItem">
+    <a class="xrefBtn" href="/react-native/basics/core/jsx-tsx-event/jsx-and-tsx">Next →</a>
+    <div class="xrefTitle">Section: React Native → JSX/TSX & Event Handling → JSX & TSX</div>
+  </div>
+
+</div>
