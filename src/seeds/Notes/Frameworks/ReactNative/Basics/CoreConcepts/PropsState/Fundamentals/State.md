@@ -1,34 +1,112 @@
-# What Is State?
+# State in React Native
 
 <hr class="dividerSection" />
 
-## State in React Native
+## What Is State?
 
 <hr class="dividerSection" />
 
-In React Native, state refers to data managed within a component that can change over time in response to user actions, network responses, or other factors. It is a core concept in building dynamic interfaces.
+<span class="emphasis">State</span> is data that can change over time and affects what is rendered on screen.
+
+When state changes, React Native automatically re-renders the component to reflect the new data.
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>State is <span class="emphasis">local</span> to the component that owns it.</li>
+    <li>When state updates, the component <span class="emphasis">re-renders</span> with the new value.</li>
+    <li>State is different from props. Props are passed in and state is managed internally.</li>
+  </ul>
+</div>
 
 <hr class="dividerSection" />
 
-## React Native vs Web React
+## State vs Props
 
 <hr class="dividerSection" />
 
-State works the same in React Native as it does in other React apps, such as web-based React apps. You also import it just like in web React — usually via the <span class="codeSnip">useState</span> hook from React.
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">State</th>
+      <th class="tableCellHeader">Props</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell">Managed internally by the component</td>
+      <td class="tableCell">Passed in from a parent component</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Can change over time</td>
+      <td class="tableCell">Read-only inside the component</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Triggers a re-render when updated</td>
+      <td class="tableCell">Triggers a re-render when parent re-renders</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Declared with <span class="codeSnip">useState</span></td>
+      <td class="tableCell">Received as function parameters</td>
+    </tr>
+  </tbody>
+</table>
 
-This makes it easy for developers with React experience to transition into React Native without relearning state management.
+<hr class="dividerSection" />
 
-<hr class="dividerSubsection1" />
+## The useState Hook
 
-### Example: Basic useState
+<hr class="dividerSection" />
 
-<hr class="dividerSubsection1" />
+<span class="codeSnip">useState</span> is a React Hook that lets you add state to a functional component.
+
+It returns an array with two elements: the current state value and a function to update it.
+
+```js
+import { useState } from 'react';
+
+const [count, setCount] = useState(0);
+```
+
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Part</th>
+      <th class="tableCellHeader">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">count</span></td>
+      <td class="tableCell">The current state value</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">setCount</span></td>
+      <td class="tableCell">The function used to update the state</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">0</span></td>
+      <td class="tableCell">The initial value of the state</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="dividerSection" />
+
+## How useState Works
+
+<hr class="dividerSection" />
+
+When you call the state updating function, React schedules a re-render of the component with the new state value.
+
+<hr class="dividerExample" />
+
+#### Example — Counter
 
 ```js
 import { useState } from 'react';
 import { View, Text, Button } from 'react-native';
 
-function Counter() {
+export default function Counter() {
   const [count, setCount] = useState(0);
 
   return (
@@ -42,53 +120,43 @@ function Counter() {
 
 <hr class="dividerSection" />
 
-## State Updates & Asynchronous Behavior
+## State with Arrays
 
 <hr class="dividerSection" />
 
-State updates are <span class="emphasis">asynchronous</span> — React batches updates together for performance. This means you cannot rely on the current state value being immediately available after calling a setter.
-
-Because of this, when the next state depends on the previous state, you should always use the <span class="emphasis">functional update pattern</span>.
-
-<hr class="dividerSubsection1" />
-
-### Example: Functional Update Pattern
-
-<hr class="dividerSubsection1" />
+When state holds an array, use the <span class="emphasis">spread operator</span> to copy existing items into the new array rather than mutating the original.
 
 ```js
-setCount((prevCount) => prevCount + 1);
+const [courseGoals, setCourseGoals] = useState([]);
+
+setCourseGoals([...courseGoals, newGoal]);
 ```
 
-When you pass a function to the state updater, React adds it to a <span class="emphasis">queue</span> of pending updates. When React processes the next render, it goes through that queue and passes the guaranteed current state value as the argument to your function — ensuring you are always working with the most up-to-date state, not a stale snapshot.
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>The spread operator <span class="codeSnip">...</span> copies all existing array items.</li>
+    <li>The new item is appended at the end.</li>
+    <li>This creates a brand new array rather than mutating the existing one.</li>
+  </ul>
+</div>
 
 <hr class="dividerSection" />
 
-## Functional Update Pattern with Arrays
+## Updating State Based on Previous State
 
 <hr class="dividerSection" />
 
-When your next state depends on the previous state and you are working with arrays, pass a function to the updater. React ensures you always get the most recent state.
+When your new state depends on the previous state, you should pass a <span class="emphasis">function</span> to the state updating function rather than a value directly.
 
-There are two approaches. The first uses the current state value directly:
+React will automatically call that function and pass it the current existing state as an argument.
 
-```js
-function addGoalHandler() {
-  setCourseGoals([...courseGoals, enteredGoalText]);
-}
-```
+<hr class="dividerExample" />
 
-This works but is not the recommended approach when your new state depends on the previous state. Because React batches updates, <span class="codeSnip">courseGoals</span> may already be stale by the time React processes it.
-
-The recommended approach is to pass a function to the updater instead:
-
-<hr class="dividerSubsection1" />
-
-### Example: Append to an Array
-
-<hr class="dividerSubsection1" />
+#### Example — Functional State Update
 
 ```js
+const [courseGoals, setCourseGoals] = useState([]);
+
 function addGoalHandler() {
   setCourseGoals((currentCourseGoals) => [
     ...currentCourseGoals,
@@ -97,110 +165,93 @@ function addGoalHandler() {
 }
 ```
 
-In a nutshell: we take the <span class="emphasis">old array</span>, <span class="emphasis">copy</span> it, <span class="emphasis">add the new goal</span>, and set that as the <span class="emphasis">new state</span>.
-
-<hr class="dividerSection" />
-
-## Rendering Arrays Dynamically with .map()
-
-<hr class="dividerSection" />
-
-To output a list of values from state, transform the array into JSX with <span class="codeSnip">.map()</span>:
-
-```js
-{courseGoals.map((goal) => <Text>{goal}</Text>)}
-```
-
 <div class="centeredBullet">
   <ul class="diamondBullets fullWidthBullet">
-    <li><span class="codeSnip">goal</span> is the current item in the array.</li>
-    <li>The callback returns a JSX element for each item.</li>
-    <li>This pattern is identical in React for the web — only the UI elements differ.</li>
+    <li>The function passed to <span class="codeSnip">setCourseGoals</span> is automatically called by React.</li>
+    <li>React passes the <span class="emphasis">current state</span> as the argument. In this case it is <span class="codeSnip">currentCourseGoals</span>.</li>
+    <li>The spread operator <span class="codeSnip">...</span> copies all existing array items into the new array.</li>
+    <li>The new item is then appended at the end.</li>
+    <li>This approach is safer than reading the state variable directly because React may batch state updates. The functional form guarantees you always receive the most up-to-date state.</li>
   </ul>
 </div>
 
-<div class="xrefBox">
-  <span class="emphasis">See:</span>
-  <a href="/javascript/arrays/methods/map">
-    DevScriptStax → JavaScript → Arrays → Methods → map
-  </a>
-</div>
 <hr class="dividerSection" />
 
 ## Building a List with State
 
 <hr class="dividerSection" />
 
-This example demonstrates three ideas together in order:
+You can use the <span class="codeSnip">.map()</span> method to dynamically render a list of items from a state array.
 
-<div class="centeredNumberedList">
+<hr class="dividerExample" />
 
-1. **Text input controlled by state**
-
-2. **Functional update to append to an array**
-
-3. **Dynamic rendering of that array with .map()**
-
-</div>
-
-<hr class="dividerSubsection1" />
-
-### Example: Input → Add → Render
-
-<hr class="dividerSubsection1" />
+#### Example — Rendering a List
 
 ```js
-import { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+const [courseGoals, setCourseGoals] = useState([]);
 
-export default function App() {
-  const [enteredGoalText, setEnteredGoalText] = useState('');
-  const [courseGoals, setCourseGoals] = useState([]);
-
-  function goalInputHandler(enteredText) {
-    setEnteredGoalText(enteredText);
-  }
-
-  function addGoalHandler() {
-    setCourseGoals((currentCourseGoals) => [
-      ...currentCourseGoals,
-      enteredGoalText,
-    ]);
-  }
-
-  return (
-    <View style={styles.appContainer}>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Your course goal!"
-          onChangeText={goalInputHandler}
-        />
-        <Button title="Add Goal" onPress={addGoalHandler} />
-      </View>
-
-      <View style={styles.goalsContainer}>
-        {courseGoals.map((goal) => <Text>{goal}</Text>)}
-      </View>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  appContainer: {},
-  inputContainer: {},
-  textInput: {},
-  goalsContainer: {},
-});
+return (
+  <View>
+    {courseGoals.map((goal) => (
+      <Text>{goal}</Text>
+    ))}
+  </View>
+);
 ```
 
 <div class="centeredBullet">
   <ul class="diamondBullets fullWidthBullet">
-    <li><span class="codeSnip">enteredGoalText</span> tracks the current text input value.</li>
-    <li><span class="codeSnip">courseGoals</span> is an array of strings representing the list.</li>
-    <li><span class="codeSnip">goalInputHandler</span> updates the input state on each keystroke.</li>
-    <li><span class="codeSnip">addGoalHandler</span> uses the functional updater form of <span class="codeSnip">setCourseGoals</span> to ensure it appends to the most up-to-date array.</li>
-    <li>The render section maps over <span class="codeSnip">courseGoals</span> and outputs a <span class="codeSnip">&lt;Text&gt;</span> node for each goal.</li>
+    <li><span class="codeSnip">.map()</span> is a standard JavaScript method that works the same way in React Native as in React for the web.</li>
+    <li>Each item in the array is passed to the callback function as <span class="codeSnip">goal</span>.</li>
+    <li>The callback returns a JSX element for each item. In this case it is a <span class="codeSnip">&lt;Text&gt;</span> component.</li>
+    <li>The result is an array of JSX elements that React Native renders as a list.</li>
+  </ul>
+</div>
+
+<hr class="dividerSubsection1" />
+
+### The key Prop
+
+<hr class="dividerSubsection1" />
+
+When rendering a list using <span class="codeSnip">.map()</span>, every item must receive a <span class="codeSnip">key</span> prop that <span class="emphasis">uniquely identifies</span> that item.
+
+This is not specific to React Native. It is a React requirement that applies to both web and mobile.
+
+Without a <span class="codeSnip">key</span> prop, React will show a warning: <span class="codeSnip">Each child in a list should have a unique key prop.</span>
+
+<hr class="dividerExample" />
+
+#### Example — List With key Prop
+
+```js
+{courseGoals.map((goal) => (
+  <Text key={goal}>{goal}</Text>
+))}
+```
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>The <span class="codeSnip">key</span> prop helps React efficiently update the list under the hood.</li>
+    <li>The value passed to <span class="codeSnip">key</span> must be <span class="emphasis">unique</span> among the items in the list.</li>
+    <li>In this example the goal text string itself is used as the key since the goals are strings.</li>
+    <li>Using the goal text as a key is not perfectly unique since the same text could be entered twice. It is good enough for simple cases and will be improved later using unique IDs.</li>
+    <li>In real apps with database data, use a unique ID rather than the item value as the key.</li>
+  </ul>
+</div>
+
+<hr class="dividerSubsection1" />
+
+### Note — key Prop vs Key Value Pairs
+
+<hr class="dividerSubsection1" />
+
+The <span class="codeSnip">key</span> prop in React lists and <span class="emphasis">key value pairs</span> in JavaScript objects and JSON share the same word but serve completely different purposes.
+
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>A <span class="emphasis">key value pair</span> in an object or JSON is a property name mapped to a value. For example: <span class="codeSnip">{ name: "Alice" }</span>. You access and use these in your code.</li>
+    <li>The <span class="codeSnip">key</span> <span class="emphasis">prop</span> in a React list is a hint to React's rendering engine to help it track which item is which when the list changes. You do not access it in your code. React uses it internally.</li>
   </ul>
 </div>
 
@@ -210,85 +261,34 @@ const styles = StyleSheet.create({
 
 <hr class="dividerSection" />
 
-React allows managing multiple state values in a single component.
-
-<hr class="dividerSubsection1" />
-
-### Example: Managing Multiple State Variables
-
-<hr class="dividerSubsection1" />
+A component can have multiple independent state variables. Each is managed by its own <span class="codeSnip">useState</span> call.
 
 ```js
-import React, { useState } from "react";
-import { View, Text, Button } from "react-native";
-
-function Profile() {
-  const [name, setName] = useState("John Doe");
-  const [age, setAge] = useState(25);
-
-  return (
-    <View>
-      <Text>Name: {name}</Text>
-      <Text>Age: {age}</Text>
-      <Button title="Increase Age" onPress={() => setAge(age + 1)} />
-    </View>
-  );
-}
-
-export default Profile;
+const [enteredGoalText, setEnteredGoalText] = useState('');
+const [courseGoals, setCourseGoals] = useState([]);
 ```
 
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>Each state variable is independent. Updating one does not affect the others.</li>
+    <li>Use separate <span class="codeSnip">useState</span> calls for logically separate pieces of state.</li>
+  </ul>
+</div>
+
 <hr class="dividerSection" />
 
-## State vs Props
+## Best Practices
 
 <hr class="dividerSection" />
 
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Feature</th>
-      <th class="tableCellHeader">State</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">Definition</td>
-      <td class="tableCell">Managed within the component</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Mutability</td>
-      <td class="tableCell">Can be modified</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Usage</td>
-      <td class="tableCell">Used for dynamic data</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="notesTable">
-  <thead>
-    <tr class="tableHeader">
-      <th class="tableCellHeader">Feature</th>
-      <th class="tableCellHeader">Props</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="tableRow">
-      <td class="tableCell">Definition</td>
-      <td class="tableCell">Passed from parent to child</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Mutability</td>
-      <td class="tableCell">Read-only (immutable)</td>
-    </tr>
-    <tr class="tableRow">
-      <td class="tableCell">Usage</td>
-      <td class="tableCell">Used for passing data</td>
-    </tr>
-  </tbody>
-</table>
+<div class="centeredBullet">
+  <ul class="diamondBullets fullWidthBullet">
+    <li>Use the <span class="emphasis">functional update form</span> when new state depends on previous state.</li>
+    <li>Never mutate state directly. Always create a new value using spread or other immutable patterns.</li>
+    <li>Keep state as minimal as possible. Only store what is necessary.</li>
+    <li>Lift state up to a parent component when multiple children need to share it.</li>
+  </ul>
+</div>
 
 <hr class="dividerSection" />
 
@@ -296,27 +296,51 @@ export default Profile;
 
 <hr class="dividerSection" />
 
-<div class="centeredBullet">
-  <ul class="diamondBullets fullWidthBullet">
-    <li>State allows a component to track and update dynamic values.</li>
-    <li>React Native uses the same <span class="codeSnip">useState</span> API as React DOM.</li>
-    <li>You import <span class="codeSnip">useState</span> from React.</li>
-    <li>State updates are asynchronous — React queues and batches them for performance.</li>
-    <li>Always use the functional update pattern when new state depends on previous state.</li>
-    <li>State updates cause a re-render to reflect changes in the UI.</li>
-  </ul>
-</div>
+<table class="notesTable">
+  <thead>
+    <tr class="tableHeader">
+      <th class="tableCellHeader">Concept</th>
+      <th class="tableCellHeader">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">useState</span></td>
+      <td class="tableCell">Adds local state to a functional component</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Setter function</td>
+      <td class="tableCell">Triggers a re-render with the new value when called</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Spread operator</td>
+      <td class="tableCell">Updates array state immutably by copying existing items</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell">Functional update form</td>
+      <td class="tableCell">Pass a function to the setter when new state depends on previous state</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">.map()</span></td>
+      <td class="tableCell">Renders arrays of state as lists of JSX elements</td>
+    </tr>
+    <tr class="tableRow">
+      <td class="tableCell"><span class="codeSnip">key</span> prop</td>
+      <td class="tableCell">Uniquely identifies each item in a rendered list so React can update it efficiently</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr class="dividerSection" />
 
 <div class="xrefNav">
   <div class="xrefItem">
     <a class="xrefBtn" href="/react-native/basics/core/props-and-state/fundamentals/props">← Back</a>
-    <div class="xrefTitle">Props & State - Fundamentals - Props</div>
+    <div class="xrefTitle">React Native → Props & State → Fundamentals → Props</div>
   </div>
 
   <div class="xrefItem">
     <a class="xrefBtn" href="/react-native/basics/core/props-and-state/async-and-api/fetch-and-axios">Next →</a>
-    <div class="xrefTitle">Section: Props & State - Async/API State - Fetch & Axios</div>
+    <div class="xrefTitle">Section: React Native → Props & State → Async/API State → Fetch & Axios</div>
   </div>
 </div>

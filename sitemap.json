@@ -5,6 +5,16 @@
     "category": "Resources/Frameworks/ReactNative"
   },
   {
+    "path": "Frameworks/ReactNative/Basics/Navigation/Stack",
+    "title": "Stack",
+    "category": "Frameworks/ReactNative/Basics/Navigation"
+  },
+  {
+    "path": "Frameworks/ReactNative/Intermediate/Features/DeviceAPIs",
+    "title": "DeviceAPIs",
+    "category": "Frameworks/ReactNative/Intermediate/Features"
+  },
+  {
     "path": "Frameworks/ReactNative/Basics/Fundamentals/Introduction",
     "title": "Introduction",
     "category": "Frameworks/ReactNative/Basics/Fundamentals"
@@ -30,11 +40,6 @@
     "category": "Frameworks/ReactNative/Tools/AndroidStudio"
   },
   {
-    "path": "Frameworks/ReactNative/Basics/Navigation/Stack",
-    "title": "Stack",
-    "category": "Frameworks/ReactNative/Basics/Navigation"
-  },
-  {
     "path": "Frameworks/ReactNative/Tools/Xcode/SignAndRun",
     "title": "SignAndRun",
     "category": "Frameworks/ReactNative/Tools/Xcode"
@@ -43,26 +48,6 @@
     "path": "Frameworks/ReactNative/Tools/Xcode/Simulators",
     "title": "Simulators",
     "category": "Frameworks/ReactNative/Tools/Xcode"
-  },
-  {
-    "path": "Frameworks/ReactNative/Intermediate/Features/DeviceAPIs",
-    "title": "DeviceAPIs",
-    "category": "Frameworks/ReactNative/Intermediate/Features"
-  },
-  {
-    "path": "Frameworks/ReactNative/Tools/ReactNativeCLI/Overview",
-    "title": "Overview",
-    "category": "Frameworks/ReactNative/Tools/ReactNativeCLI"
-  },
-  {
-    "path": "Frameworks/ReactNative/Tools/ReactNativeCLI/Running",
-    "title": "Running",
-    "category": "Frameworks/ReactNative/Tools/ReactNativeCLI"
-  },
-  {
-    "path": "Frameworks/ReactNative/Tools/ReactNativeCLI/Setup",
-    "title": "Setup",
-    "category": "Frameworks/ReactNative/Tools/ReactNativeCLI"
   },
   {
     "path": "Tools/AndroidStudio/Basics/Fundamentals/InstallationAndSDK.",
@@ -80,6 +65,16 @@
     "category": "Tools/Xcode/Advanced/Diagnostics"
   },
   {
+    "path": "Tools/Xcode/Advanced/SigningAndDistribute/CertsAndProvisioning",
+    "title": "CertsAndProvisioning",
+    "category": "Tools/Xcode/Advanced/SigningAndDistribute"
+  },
+  {
+    "path": "Tools/Xcode/Advanced/SigningAndDistribute/SchemesAndBuild",
+    "title": "SchemesAndBuild",
+    "category": "Tools/Xcode/Advanced/SigningAndDistribute"
+  },
+  {
     "path": "Tools/Xcode/Basics/Fundamentals/FirstRunUpdates",
     "title": "FirstRunUpdates",
     "category": "Tools/Xcode/Basics/Fundamentals"
@@ -90,14 +85,29 @@
     "category": "Tools/Xcode/Basics/Fundamentals"
   },
   {
-    "path": "Tools/Xcode/Advanced/SigningAndDistribute/CertsAndProvisioning",
-    "title": "CertsAndProvisioning",
-    "category": "Tools/Xcode/Advanced/SigningAndDistribute"
+    "path": "Frameworks/ReactNative/Tools/ReactNativeCLI/Overview",
+    "title": "Overview",
+    "category": "Frameworks/ReactNative/Tools/ReactNativeCLI"
   },
   {
-    "path": "Tools/Xcode/Advanced/SigningAndDistribute/SchemesAndBuild",
-    "title": "SchemesAndBuild",
-    "category": "Tools/Xcode/Advanced/SigningAndDistribute"
+    "path": "Frameworks/ReactNative/Tools/ReactNativeCLI/Running",
+    "title": "Running",
+    "category": "Frameworks/ReactNative/Tools/ReactNativeCLI"
+  },
+  {
+    "path": "Frameworks/ReactNative/Tools/ReactNativeCLI/Setup",
+    "title": "Setup",
+    "category": "Frameworks/ReactNative/Tools/ReactNativeCLI"
+  },
+  {
+    "path": "Tools/Xcode/Basics/Simulators/CustomSimsAndResets",
+    "title": "CustomSimsAndResets",
+    "category": "Tools/Xcode/Basics/Simulators"
+  },
+  {
+    "path": "Tools/Xcode/Basics/Simulators/ManageRuntimes",
+    "title": "ManageRuntimes",
+    "category": "Tools/Xcode/Basics/Simulators"
   },
   {
     "path": "Frameworks/ReactNative/Basics/CoreConcepts/Components/Basics",
@@ -128,16 +138,6 @@
     "path": "Frameworks/ReactNative/Basics/CoreConcepts/JSXTSXEvent/JSXAndTSX",
     "title": "JSXAndTSX",
     "category": "Frameworks/ReactNative/Basics/CoreConcepts/JSXTSXEvent"
-  },
-  {
-    "path": "Tools/Xcode/Basics/Simulators/CustomSimsAndResets",
-    "title": "CustomSimsAndResets",
-    "category": "Tools/Xcode/Basics/Simulators"
-  },
-  {
-    "path": "Tools/Xcode/Basics/Simulators/ManageRuntimes",
-    "title": "ManageRuntimes",
-    "category": "Tools/Xcode/Basics/Simulators"
   },
   {
     "path": "Frameworks/ReactNative/Tools/Expo/CLI/Introduction",
